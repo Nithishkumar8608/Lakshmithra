@@ -32,10 +32,10 @@ const Navbar = () => {
                 </a>
               </div>
             </div>
-            <div className="col-md-6 text-end">
+            {/* <div className="col-md-6 text-end">
               <Link to="/branch-locator" className="btn btn-outline-light btn-sm me-2">Find Branch</Link>
               <Link to="/apply" className="btn btn-warning btn-sm">Apply Now</Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
