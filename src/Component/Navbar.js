@@ -101,7 +101,11 @@ const Navbar = () => {
                 </ul>
               </li>
 
-              <li className="nav-item dropdown">
+              <li className="nav-item">
+                <Link className="nav-link" to="/howitworks">HOW IT WORKS</Link>
+              </li>
+
+              {/* <li className="nav-item dropdown">
                 <button
                   className="nav-link dropdown-toggle"
                   type="button"
@@ -110,13 +114,13 @@ const Navbar = () => {
                 >
                   HOW IT WORKS
                 </button>
-                {/* <ul className="dropdown-menu">
+                 <ul className="dropdown-menu">
                   <li><Link className="dropdown-item" to="/eligibility">Eligibility</Link></li>
                   <li><Link className="dropdown-item" to="/process">Process</Link></li>
                   <li><Link className="dropdown-item" to="/documents">Documents</Link></li>
                   <li><Link className="dropdown-item" to="/fees-repayment">Fees & Repayment</Link></li>
-                </ul> */}
-              </li>
+                </ul> 
+              </li> */}
 
               <li className="nav-item dropdown">
                 <button
