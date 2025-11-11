@@ -1,0 +1,99 @@
+.Footer {
+  background: #f8f9fa; /* Light gray background for better logo contrast */
+  color: #0E3C6E; /* Brand blue for text */
+  padding: 3rem 0;
+  margin-top: 5rem;
+  font-family: 'Poppins', sans-serif;
+  border-top: 4px solid #F6A500; /* Brand yellow accent line */
+}
+
+/* --- Column 1 --- */
+.ft-1 p {
+  padding: 0.5rem 0;
+  font-weight: 400;
+  color: #333;
+}
+
+/* Social Icons */
+.footer-icons i {
+  padding: 0.4rem 0.5rem;
+  background: #0E3C6E;
+  color: #fff;
+  margin: 0 0.5rem;
+  border-radius: 100%;
+  transition: all 0.3s ease;
+}
+
+.footer-icons i:hover {
+  background: #F6A500;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* --- Column 2 (Quick Links) --- */
+.Footer h5 {
+  color: #0E3C6E;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.ft-2 ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ft-2 ul li {
+  padding: 0.35rem 0;
+}
+
+.ft-2 ul a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.05rem;
+  transition: 0.3s;
+}
+
+.ft-2 ul a:hover {
+  color: #F6A500;
+}
+
+/* --- Column 3 (Contact) --- */
+.ft-3 p {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #333;
+}
+
+.ft-3 i {
+  padding-right: 0.5rem;
+  color: #F6A500;
+}
+
+/* --- Footer Bottom --- */
+.footer-bottom {
+  background: #0E3C6E;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .Footer {
+    text-align: center;
+  }
+
+  .ft-1 img {
+    width: 60%;
+  }
+
+  .ft-2, .ft-3 {
+    margin-top: 2rem;
+  }
+}
