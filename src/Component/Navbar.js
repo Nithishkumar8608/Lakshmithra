@@ -71,19 +71,8 @@ const Navbar = () => {
                 <Link className="nav-link" to="/">HOME</Link>
               </li>
 
-              <li className="nav-item dropdown">
-                <button
-                  className="nav-link dropdown-toggle"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  ABOUT US
-                </button>
-                <ul className="dropdown-menu">
-                  <li><Link className="dropdown-item" to="/vision-values">VISION & VALUES</Link></li>
-                  <li><Link className="dropdown-item" to="/leadership-team">LEADERSHIP & TEAM</Link></li>
-                </ul>
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">ABOUT US</Link>
               </li>
 
               <li className="nav-item dropdown">
