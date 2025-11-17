@@ -1,85 +1,89 @@
-import React from "react";
-import { motion } from "framer-motion";
-import "bootstrap/dist/css/bootstrap.min.css";
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import * as Icons from 'lucide-react';
+import { services, testimonials, stats, whyChooseUs } from '../data/Mock.js';
+import SectionTitle from '../Component/SectionTitle';
 
 const Home = () => {
   return (
-    <>
-      {/* ===== HERO SECTION ===== */}
-      <section className="hero d-flex align-items-center justify-content-center text-center text-white">
+    <div>
+
+      {/* Hero Section */}
+      <section
+        className="position-relative text-white d-flex align-items-center"
+        style={{
+          minHeight: '600px',
+          background:
+            'linear-gradient(rgba(0, 59, 109, 0.85), rgba(0, 90, 156, 0.85)), url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80) center/cover',
+        }}
+      >
         <div className="container">
-          <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="display-4 fw-bold mb-3"
-          >
-            Empowering <span className="text-orange">Financial Growth</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="lead mb-4"
-          >
-            At <strong>Lakshmithra Finance</strong>, we provide innovative financial
-            solutions that drive progress, stability, and success.
-          </motion.p>
-          <motion.a
-            href="#about"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn btn-orange px-4 py-2 fw-semibold rounded-pill"
-          >
-            Learn More
-          </motion.a>
+          <div className="row">
+            <div className="col-lg-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h1 className="display-3 fw-bold mb-4">
+                  Your Trusted Partner for Financial Growth
+                </h1>
+                <p className="fs-5 mb-4">
+                  Quick loan approval, competitive rates, and personalized financial solutions tailored to your needs. Get started in minutes!
+                </p>
+
+                <div className="d-flex gap-3 flex-wrap">
+                  <Link
+                    to="/apply"
+                    className="btn btn-lg px-4"
+                    style={{
+                      backgroundColor: '#FFA500',
+                      color: 'white',
+                      border: 'none',
+                      fontWeight: '600',
+                    }}
+                  >
+                    Apply Now
+                  </Link>
+
+                  <Link
+                    to="/services"
+                    className="btn btn-lg btn-outline-light px-4"
+                    style={{ fontWeight: '600' }}
+                  >
+                    Our Services
+                  </Link>
+                </div>
+
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ===== FEATURES SECTION ===== */}
-      <section className="features py-5 text-center">
-        <div className="container">
-          <h2 className="fw-bold text-blue mb-4">Why Choose Lakshmithra</h2>
-          <p className="text-muted mb-5 w-75 mx-auto">
-            We simplify finance for individuals and businesses with transparency,
-            trust, and cutting-edge digital services.
-          </p>
 
+      {/* Stats Section */}
+      <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
+        <div className="container">
           <div className="row g-4">
-            {[
-              {
-                icon: "💼",
-                title: "Smart Business Loans",
-                desc: "Flexible business loan options designed for fast growth and stability.",
-              },
-              {
-                icon: "📈",
-                title: "Investment Planning",
-                desc: "Secure and high-return investment solutions tailored to your goals.",
-              },
-              {
-                icon: "⚡",
-                title: "Quick Approvals",
-                desc: "Minimal documentation and instant approval with smart analytics.",
-              },
-              {
-                icon: "🤝",
-                title: "Trusted by 10K+ Clients",
-                desc: "Over a decade of excellence in financial solutions and client trust.",
-              },
-            ].map((item, i) => (
+            {stats.map((stat, index) => (
               <motion.div
-                key={i}
-                className="col-md-3 col-6"
-                initial={{ opacity: 0, y: 40 }}
+                key={stat.id}
+                className="col-lg-3 col-md-6"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="feature-box p-4 shadow-sm bg-white rounded-4 h-100">
-                  <div className="icon fs-1 mb-3">{item.icon}</div>
-                  <h5 className="fw-bold text-blue mb-2">{item.title}</h5>
-                  <p className="text-muted small">{item.desc}</p>
+                <div className="text-center">
+                  <h2
+                    className="fw-bold mb-2"
+                    style={{ color: '#FFA500', fontSize: '3rem' }}
+                  >
+                    {stat.value}
+                  </h2>
+                  <p className="text-muted fw-medium">{stat.label}</p>
                 </div>
               </motion.div>
             ))}
@@ -87,87 +91,230 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== ABOUT SECTION ===== */}
-      <section id="about" className="about py-5 bg-light">
+
+      {/* Services Section */}
+      <section className="py-5" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-md-6 mb-4 mb-md-0">
-              <motion.img
-                src="/images/finance-team.jpg"
-                alt="Lakshmithra Team"
-                className="img-fluid rounded-4 shadow"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              />
-            </div>
-            <div className="col-md-6">
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 className="fw-bold text-blue mb-3">About Lakshmithra Finance</h2>
-                <p className="text-muted">
-                  Lakshmithra Finance is a trusted financial institution offering
-                  personalized solutions for individuals and businesses. Our mission is
-                  to empower growth through accessible, ethical, and innovative finance.
-                </p>
-                <ul className="list-unstyled mt-3">
-                  <li>✅ Simplified Loan Processing</li>
-                  <li>✅ Tailored Investment Plans</li>
-                  <li>✅ Expert Financial Guidance</li>
-                </ul>
-              </motion.div>
-            </div>
+
+          <SectionTitle
+            title="Our Services"
+            subtitle="Comprehensive loan solutions designed to meet your financial needs"
+          />
+
+          <div className="row g-4">
+            {services.slice(0, 3).map((service, index) => {
+              const IconComponent = Icons[service.icon];
+
+              return (
+                <motion.div
+                  key={service.id}
+                  className="col-lg-4 col-md-6"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="card h-100 border-0 shadow-sm hover-card">
+                    <div className="card-body p-4">
+                      <div
+                        className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style={{
+                          width: '64px',
+                          height: '64px',
+                          backgroundColor: '#FFA500',
+                          color: 'white',
+                        }}
+                      >
+                        {IconComponent && <IconComponent size={32} />}
+                      </div>
+
+                      <h4 className="fw-bold mb-3" style={{ color: '#003B6D' }}>
+                        {service.name}
+                      </h4>
+
+                      <p className="text-muted mb-4">{service.shortDesc}</p>
+
+                      <Link
+                        to="/services"
+                        className="btn btn-sm"
+                        style={{
+                          backgroundColor: '#003B6D',
+                          color: 'white',
+                          border: 'none',
+                        }}
+                      >
+                        Learn More
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
+
+          <div className="text-center mt-5">
+            <Link
+              to="/services"
+              className="btn btn-lg"
+              style={{
+                backgroundColor: '#FFA500',
+                color: 'white',
+                border: 'none',
+                fontWeight: '600',
+              }}
+            >
+              View All Services
+            </Link>
+          </div>
+
         </div>
       </section>
 
-      {/* ===== STATS SECTION ===== */}
-      <section className="stats text-center text-white py-5">
+
+      {/* Why Choose Us */}
+      <section
+        className="py-5"
+        style={{ backgroundColor: '#f8f9fa', paddingTop: '80px', paddingBottom: '80px' }}
+      >
         <div className="container">
+
+          <SectionTitle
+            title="Why Choose Lakshmithra Finance?"
+            subtitle="We are committed to providing the best financial solutions with unmatched service"
+          />
+
           <div className="row g-4">
-            {[
-              { value: "₹500Cr+", label: "Funds Disbursed" },
-              { value: "10K+", label: "Satisfied Clients" },
-              { value: "18+", label: "Years Experience" },
-              { value: "150+", label: "Financial Experts" },
-            ].map((stat, i) => (
+            {whyChooseUs.map((item, index) => {
+              const IconComponent = Icons[item.icon];
+
+              return (
+                <motion.div
+                  key={item.id}
+                  className="col-lg-3 col-md-6"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="text-center p-4">
+                    <div
+                      className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                      style={{
+                        width: '80px',
+                        height: '80px',
+                        backgroundColor: '#003B6D',
+                        color: 'white',
+                      }}
+                    >
+                      {IconComponent && <IconComponent size={36} />}
+                    </div>
+
+                    <h5 className="fw-bold mb-3" style={{ color: '#003B6D' }}>
+                      {item.title}
+                    </h5>
+
+                    <p className="text-muted">{item.description}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* Testimonials */}
+      <section className="py-5" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
+        <div className="container">
+
+          <SectionTitle
+            title="What Our Customers Say"
+            subtitle="Real experiences from real customers who trust us with their financial needs"
+          />
+
+          <div className="row g-4">
+            {testimonials.map((testimonial, index) => (
               <motion.div
-                key={i}
-                className="col-md-3 col-6"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
+                key={testimonial.id}
+                className="col-lg-6"
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
               >
-                <h3 className="fw-bold text-orange">{stat.value}</h3>
-                <p>{stat.label}</p>
+                <div className="card border-0 shadow-sm h-100">
+                  <div className="card-body p-4">
+                    <div className="mb-3">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Icons.Star
+                          key={i}
+                          size={20}
+                          fill="#FFA500"
+                          color="#FFA500"
+                          className="me-1"
+                        />
+                      ))}
+                    </div>
+
+                    <p className="text-muted mb-4" style={{ fontSize: '1.05rem' }}>
+                      "{testimonial.content}"
+                    </p>
+
+                    <div>
+                      <h6 className="fw-bold mb-0" style={{ color: '#003B6D' }}>
+                        {testimonial.name}
+                      </h6>
+                      <small className="text-muted">{testimonial.role}</small>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* ===== CTA SECTION ===== */}
-      <section className="cta py-5 text-center">
+
+      {/* CTA */}
+      <section
+        className="py-5 text-white"
+        style={{
+          background: 'linear-gradient(135deg, #003B6D 0%, #005A9C 100%)',
+          paddingTop: '80px',
+          paddingBottom: '80px',
+        }}
+      >
         <div className="container">
-          <h3 className="fw-bold text-blue mb-3">
-            Take Control of Your Financial Future
-          </h3>
-          <p className="text-muted mb-4 w-75 mx-auto">
-            Connect with Lakshmithra experts today to find the right financial plan for
-            your goals.
-          </p>
-          <a
-            href="#contact"
-            className="btn btn-orange px-4 py-2 fw-semibold rounded-pill"
-          >
-            Get Started
-          </a>
+          <div className="row align-items-center">
+            <div className="col-lg-8">
+              <h2 className="fw-bold mb-3">Ready to Get Started?</h2>
+              <p className="fs-5 mb-4 mb-lg-0">
+                Apply for a loan today and get instant approval. Our team is ready to help you achieve your financial goals.
+              </p>
+            </div>
+
+            <div className="col-lg-4 text-lg-end">
+              <Link
+                to="/apply"
+                className="btn btn-lg px-5"
+                style={{
+                  backgroundColor: '#FFA500',
+                  color: 'white',
+                  border: 'none',
+                  fontWeight: '600',
+                }}
+              >
+                Apply Now
+              </Link>
+            </div>
+
+          </div>
         </div>
       </section>
-    </>
+
+    </div>
   );
 };
 

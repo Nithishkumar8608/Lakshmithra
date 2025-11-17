@@ -1,64 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 :root {
-  --primary-blue: #003b6d;
-  --primary-orange: #ffa500;
+  --primary: #003B6D;
+  --secondary: #FFA500;
+  --light-gray: #f8f9fa;
+  --dark-gray: #6c757d;
 }
 
-/* HERO SECTION */
-.hero {
-  background: linear-gradient(
-      rgba(0, 59, 109, 0.7),
-      rgba(0, 59, 109, 0.85)
-    ),
-    url("assets/businessmen-elegant-suits-business-meeting-discussing-new-project-office\ 1.jpg") center/cover no-repeat;
-  height: 50vh;
-  color: #fff;
+.text-primary {
+  color: var(--primary) !important;
 }
 
-.text-blue {
-  color: var(--primary-blue);
+.bg-primary {
+  background-color: var(--primary) !important;
 }
 
-.text-orange {
-  color: var(--primary-orange);
+.text-secondary {
+  color: var(--secondary) !important;
 }
 
-.btn-orange {
-  background-color: var(--primary-orange);
-  border: none;
-  color: #fff;
-  transition: 0.3s;
+.bg-secondary {
+  background-color: var(--secondary) !important;
 }
 
-.btn-orange:hover {
-  background-color: #ffb733;
-  color: #003b6d;
-}
-
-/* FEATURES */
-.feature-box {
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
   transition: all 0.3s ease;
 }
 
-.feature-box:hover {
-  transform: translateY(-8px);
-  border-bottom: 4px solid var(--primary-orange);
+.btn-primary:hover {
+  background-color: #002952;
+  border-color: #002952;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 59, 109, 0.3);
 }
 
-/* STATS */
-.stats {
-  background: linear-gradient(135deg, var(--primary-blue), #00244a);
+.btn-secondary {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: white;
+  transition: all 0.3s ease;
 }
 
-/* CTA */
-.cta {
-  background: #f9fafc;
+.btn-secondary:hover {
+  background-color: #e69500;
+  border-color: #e69500;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
 }
 
-.cta a {
-  transition: 0.3s;
+.btn-outline-primary {
+  border-color: var(--primary);
+  color: var(--primary);
+  transition: all 0.3s ease;
 }
 
-.cta a:hover {
-  background-color: var(--primary-blue);
-  color: #fff !important;
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #003B6D 0%, #005a9e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+.hover-link:hover {
+  color: var(--secondary) !important;
+  transition: all 0.3s ease;
+}
+
+.top-bar {
+  background-color: var(--primary);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 59, 109, 0.15);
+}
+
+.form-range::-webkit-slider-thumb {
+  background-color: var(--primary);
+}
+
+.form-range::-moz-range-thumb {
+  background-color: var(--primary);
+}
+
+.page-hero {
+  background: linear-gradient(135deg, #003B6D 0%, #005a9e 100%);
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+  transform: translateX(-50%);
+}
+
+@media (max-width: 767px) {
+  .timeline::before {
+    left: 30px;
+  }
 }

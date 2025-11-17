@@ -1,0 +1,180 @@
+.services-hero {
+  background: linear-gradient(135deg, #003B6D 0%, #005A9C 100%);
+  padding: 150px 0 100px;
+  color: white;
+}
+
+.services-hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.services-hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+.service-detail-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.service-detail-card:hover {
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+}
+
+.service-icon-large {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 15px;
+  margin: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 59, 109, 0.2);
+}
+
+.service-content {
+  padding: 2rem;
+}
+
+.service-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #003B6D;
+}
+
+.service-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+.service-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+.feature-check {
+  color: #FFA500;
+  flex-shrink: 0;
+}
+
+.process-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.process-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.process-step {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #003B6D 0%, #005A9C 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+.process-card h5 {
+  color: #003B6D;
+  font-weight: 700;
+}
+
+.eligibility-card {
+  border: none;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.eligibility-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.eligibility-card h5 {
+  color: #003B6D;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.eligibility-card p {
+  font-size: 1.1rem;
+}
+
+.cta-banner {
+  background: linear-gradient(135deg, #003B6D 0%, #002449 100%);
+}
+
+.cta-content {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    padding: 120px 0 80px;
+  }
+
+  .services-hero-title {
+    font-size: 2rem;
+  }
+
+  .services-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .service-icon-large {
+    height: 200px;
+    margin: 1rem 0;
+  }
+
+  .service-title {
+    font-size: 1.6rem;
+  }
+
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-buttons .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}

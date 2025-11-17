@@ -1,0 +1,195 @@
+.about-hero {
+  background: linear-gradient(135deg, #003B6D 0%, #005A9C 100%);
+  padding: 150px 0 100px;
+  color: white;
+}
+
+.about-hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.about-hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+.about-story .lead {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-story p {
+  color: #666;
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+
+.about-image-container {
+  position: relative;
+}
+
+.about-image-placeholder {
+  background: linear-gradient(135deg, #003B6D 0%, #005A9C 100%);
+  border-radius: 15px;
+  padding: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 40px rgba(0, 59, 109, 0.2);
+}
+
+.about-icon {
+  color: #FFA500;
+}
+
+.mv-card {
+  border: none;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.mv-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.mv-card h3 {
+  color: #003B6D;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.mv-card p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.value-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.value-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #003B6D 0%, #005A9C 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.value-card h5 {
+  color: #003B6D;
+  font-weight: 700;
+}
+
+.team-card {
+  border: none;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.team-avatar {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #003B6D 0%, #005A9C 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.team-card h5 {
+  color: #003B6D;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.team-card .text-primary {
+  color: #FFA500 !important;
+  font-weight: 600;
+}
+
+.achievement-card {
+  background: linear-gradient(135deg, #003B6D 0%, #005A9C 100%);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 59, 109, 0.2);
+  transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 59, 109, 0.3);
+}
+
+.achievement-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #FFA500;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-label {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 120px 0 80px;
+  }
+
+  .about-hero-title {
+    font-size: 2rem;
+  }
+
+  .about-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .about-image-placeholder {
+    padding: 60px;
+    margin-top: 2rem;
+  }
+
+  .achievement-number {
+    font-size: 2.2rem;
+  }
+}

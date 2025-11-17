@@ -1,0 +1,127 @@
+.contact-hero {
+  background: linear-gradient(135deg, #003B6D 0%, #005A9C 100%);
+  padding: 150px 0 100px;
+  color: white;
+}
+
+.contact-hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.contact-hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+.contact-info-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.contact-info-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.contact-info-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.contact-info-card h6 {
+  color: #003B6D;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-info-card p {
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contact-form-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form-container h3 {
+  color: #003B6D;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.form-label {
+  color: #003B6D;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-control,
+.form-select {
+  padding: 0.75rem 1rem;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #FFA500;
+  box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.15);
+}
+
+.map-section {
+  margin-top: 3rem;
+}
+
+.map-section iframe {
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+}
+
+.map-section iframe:hover {
+  filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: 120px 0 80px;
+  }
+
+  .contact-hero-title {
+    font-size: 2rem;
+  }
+
+  .contact-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .contact-form-container {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .contact-info-card:hover {
+    transform: translateX(0);
+    transform: translateY(-5px);
+  }
+}

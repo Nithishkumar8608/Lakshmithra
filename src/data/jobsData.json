@@ -1,0 +1,113 @@
+[
+  {
+    "id": "loan-officer-001",
+    "title": "Loan Officer",
+    "department": "Lending Department",
+    "location": "Madurai, Tamil Nadu",
+    "type": "Full-Time",
+    "experience": "2–5 Years",
+    "salary": "₹25,000 – ₹35,000 per month",
+    "posted": "2025-01-10",
+    "description": "We are seeking a Loan Officer who can assess loan applications, verify client documents, and ensure smooth loan processing.",
+    "responsibilities": [
+      "Meet clients and evaluate loan eligibility",
+      "Verify financial documents and KYC papers",
+      "Prepare loan proposals for approval",
+      "Maintain customer relationships and follow-ups"
+    ],
+    "qualifications": [
+      "Bachelor’s degree in Finance, Business, or related field",
+      "Strong knowledge of loan processing",
+      "Excellent communication skills",
+      "Ability to work with targets"
+    ]
+  },
+  {
+    "id": "field-executive-002",
+    "title": "Field Executive",
+    "department": "Operations",
+    "location": "Coimbatore, Tamil Nadu",
+    "type": "Full-Time",
+    "experience": "0–3 Years",
+    "salary": "₹18,000 – ₹25,000 per month",
+    "posted": "2025-01-15",
+    "description": "We are hiring Field Executives to handle client visits, document collection, verification, and basic loan processing.",
+    "responsibilities": [
+      "Visit customer locations for document collection",
+      "Perform field verification",
+      "Coordinate with the loan team",
+      "Build strong customer relations"
+    ],
+    "qualifications": [
+      "Any degree or diploma",
+      "Good communication and field experience",
+      "Two-wheeler & license required"
+    ]
+  },
+  {
+    "id": "customer-support-003",
+    "title": "Customer Support Executive",
+    "department": "Support & Service",
+    "location": "Chennai, Tamil Nadu",
+    "type": "Full-Time",
+    "experience": "1–4 Years",
+    "salary": "₹20,000 – ₹30,000 per month",
+    "posted": "2025-02-01",
+    "description": "We are looking for friendly and professional customer support executives to assist customers with loan queries.",
+    "responsibilities": [
+      "Handle customer inbound calls and queries",
+      "Provide accurate loan product information",
+      "Maintain CRM updates and track follow-ups",
+      "Achieve satisfaction and service quality standards"
+    ],
+    "qualifications": [
+      "Any degree",
+      "Strong communication in English & Tamil",
+      "Prior support/call-center experience preferred"
+    ]
+  },
+  {
+    "id": "credit-analyst-004",
+    "title": "Credit Analyst",
+    "department": "Risk & Credit",
+    "location": "Bangalore, Karnataka",
+    "type": "Full-Time",
+    "experience": "3–7 Years",
+    "salary": "₹35,000 – ₹50,000 per month",
+    "posted": "2025-02-05",
+    "description": "We need an experienced Credit Analyst to review financial statements, assess risks, and support credit decision-making.",
+    "responsibilities": [
+      "Analyze client financials and creditworthiness",
+      "Perform risk assessment and scoring",
+      "Prepare credit analysis reports",
+      "Support loan underwriting decisions"
+    ],
+    "qualifications": [
+      "Degree in Finance, Accounting, or MBA",
+      "Analytical mindset with strong financial knowledge",
+      "Experience in NBFC or Banking sector"
+    ]
+  },
+  {
+    "id": "hr-manager-005",
+    "title": "HR Manager",
+    "department": "Human Resources",
+    "location": "Madurai, Tamil Nadu",
+    "type": "Full-Time",
+    "experience": "4–8 Years",
+    "salary": "₹40,000 – ₹60,000 per month",
+    "posted": "2025-01-20",
+    "description": "We are seeking a skilled HR Manager to manage hiring, employee relations, onboarding, and HR policies.",
+    "responsibilities": [
+      "Lead recruitment and onboarding",
+      "Manage employee performance and reviews",
+      "Handle payroll and HR policies",
+      "Improve workplace culture and engagement"
+    ],
+    "qualifications": [
+      "MBA in HR or equivalent",
+      "Strong knowledge of HR processes",
+      "Excellent leadership and communication"
+    ]
+  }
+]

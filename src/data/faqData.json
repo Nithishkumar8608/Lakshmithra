@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "question": "What documents are required to apply for a loan?",
+    "answer": "The basic documents required include identity proof (Aadhar, PAN card), address proof, income proof (salary slips or ITR), bank statements for the last 6 months, and passport-size photographs. Specific loan types may require additional documentation."
+  },
+  {
+    "id": 2,
+    "question": "How long does the loan approval process take?",
+    "answer": "For personal loans, approval typically takes 48-72 hours after submission of complete documents. Home loans and business loans may take 5-7 working days depending on property verification and business assessment requirements."
+  },
+  {
+    "id": 3,
+    "question": "What is the minimum credit score required?",
+    "answer": "We generally recommend a credit score of 650 or above for loan approval. However, we evaluate applications holistically, considering income stability, employment history, and other factors. Lower credit scores may be considered with additional collateral or co-applicant."
+  },
+  {
+    "id": 4,
+    "question": "Can I prepay my loan without penalties?",
+    "answer": "Yes, we offer flexible prepayment options. For personal and business loans, prepayment is allowed after 6 months with minimal charges. Home loans can be prepaid anytime with charges as per RBI guidelines. Zero prepayment charges for floating rate loans."
+  },
+  {
+    "id": 5,
+    "question": "What are the interest rates offered?",
+    "answer": "Interest rates vary based on loan type, amount, tenure, and your credit profile. Personal loans start from 10.5%, home loans from 8.5%, business loans from 12%, vehicle loans from 9.5%, education loans from 9%, and gold loans from 7.5% per annum."
+  },
+  {
+    "id": 6,
+    "question": "Is collateral required for all types of loans?",
+    "answer": "No, personal loans and education loans are typically unsecured and don't require collateral. Home loans are secured by the property being purchased. Business loans above certain amounts may require collateral. Gold loans are secured by gold ornaments."
+  },
+  {
+    "id": 7,
+    "question": "Can I apply for a loan if I am self-employed?",
+    "answer": "Yes, we provide loans to both salaried and self-employed individuals. Self-employed applicants need to provide ITR for the last 2-3 years, business registration proof, and bank statements showing regular business transactions."
+  },
+  {
+    "id": 8,
+    "question": "How is the loan EMI calculated?",
+    "answer": "EMI is calculated using the formula: EMI = [P x R x (1+R)^N]/[(1+R)^N-1], where P is principal, R is monthly interest rate, and N is tenure in months. You can use our loan calculator on the website to get instant EMI calculations."
+  },
+  {
+    "id": 9,
+    "question": "What happens if I miss an EMI payment?",
+    "answer": "Missing EMI payments can negatively impact your credit score. We charge a late payment fee and penal interest. If you anticipate difficulty in payment, please contact us immediately. We offer restructuring options and can work out a suitable repayment plan."
+  },
+  {
+    "id": 10,
+    "question": "Can I increase my loan amount after approval?",
+    "answer": "Yes, if you need additional funds after your loan is disbursed, you can apply for a top-up loan. The eligibility depends on your repayment track record, typically requiring at least 6-12 months of regular EMI payments."
+  },
+  {
+    "id": 11,
+    "question": "Do you offer balance transfer facility?",
+    "answer": "Yes, we offer balance transfer facilities for home loans and personal loans from other financial institutions. You can benefit from lower interest rates and better terms. Processing fees and other charges apply as per our current scheme."
+  },
+  {
+    "id": 12,
+    "question": "How secure is the online loan application process?",
+    "answer": "Our online application process uses bank-grade encryption and security protocols. All your personal and financial information is protected with SSL certification. We comply with RBI guidelines and data protection regulations to ensure complete security of your information."
+  }
+]

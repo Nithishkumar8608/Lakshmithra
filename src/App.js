@@ -8,7 +8,15 @@ import './App.css';
 import Navbar from './Component/Navbar';
 import Home from './Pages/Home';
 import Footer from './Component/Footer/Footer';
-// import AboutPage from './Pages/About';
+import AboutPage from './Pages/About';
+import Services from './Pages/Services';
+import Contact from './Pages/Contact';
+import FAQ from './Pages/FAQ';
+import LoanCalculator from './Pages/LoanCalculator';
+import Career from './Pages/Career';
+import ServiceDetail from './Pages/ServiceDetails';
+
+
 
 function App() {
   return (
@@ -18,7 +26,14 @@ function App() {
       <Routes>
         
         <Route path="/" element={<Home/>} />
-        {/* <Route path='/about' element={<AboutPage/>} /> */}
+        <Route path='/about' element={<AboutPage/>} /> 
+        <Route path='/services' element={<Services/>}/>
+        <Route path='/services/:id' element={<ServiceDetail/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/faq' element={<FAQ/>}/>
+        <Route path='/loancalculator' element={<LoanCalculator/>}/>
+        <Route path='/career' element={<Career/>}/>
+
       </Routes>
       <Footer/>
      </BrowserRouter>

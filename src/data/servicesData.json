@@ -1,0 +1,168 @@
+[
+  {
+    "id": "personal-loan",
+    "title": "Personal Loan",
+    "description": "Quick and hassle-free personal loans for all your immediate needs",
+    "icon": "User",
+    "fullDescription": "Our personal loans are designed to help you meet your immediate financial needs with minimal documentation and quick approval. Whether it's for a medical emergency, education, or any personal expense, we've got you covered.",
+    "features": [
+      "Loan amount up to ₹10 Lakhs",
+      "Flexible repayment tenure up to 5 years",
+      "Competitive interest rates starting from 10.5%",
+      "Minimal documentation",
+      "Quick approval within 48 hours"
+    ],
+    "eligibility": [
+      "Age: 21-60 years",
+      "Minimum monthly income: ₹25,000",
+      "Employment: Salaried or Self-employed",
+      "Good credit score (650+)"
+    ],
+    "documents": [
+      "Identity proof (Aadhar/PAN)",
+      "Address proof",
+      "Income proof (Salary slips/ITR)",
+      "Bank statements (6 months)",
+      "Passport size photographs"
+    ]
+  },
+  {
+    "id": "home-loan",
+    "title": "Home Loan",
+    "description": "Make your dream home a reality with our attractive home loan schemes",
+    "icon": "Home",
+    "fullDescription": "Turn your dream of owning a home into reality with our flexible home loan solutions. We offer competitive rates and customized repayment plans to suit your financial capability.",
+    "features": [
+      "Loan amount up to ₹1 Crore",
+      "Repayment tenure up to 30 years",
+      "Interest rates starting from 8.5%",
+      "Balance transfer facility available",
+      "Top-up loan options",
+      "Tax benefits under Section 80C & 24"
+    ],
+    "eligibility": [
+      "Age: 21-65 years",
+      "Minimum annual income: ₹3 Lakhs",
+      "Stable employment history",
+      "Property should be approved by local authorities"
+    ],
+    "documents": [
+      "KYC documents",
+      "Income proof",
+      "Property documents",
+      "Bank statements",
+      "Employment proof"
+    ]
+  },
+  {
+    "id": "business-loan",
+    "title": "Business Loan",
+    "description": "Expand your business with our tailored business financing solutions",
+    "icon": "Briefcase",
+    "fullDescription": "Fuel your business growth with our flexible business loans. Whether you need working capital, equipment financing, or expansion funds, we provide customized solutions for your business needs.",
+    "features": [
+      "Loan amount up to ₹50 Lakhs",
+      "Flexible tenure up to 7 years",
+      "Competitive interest rates from 12%",
+      "Minimal collateral requirements",
+      "Quick disbursement",
+      "Overdraft facility available"
+    ],
+    "eligibility": [
+      "Business vintage: Minimum 2 years",
+      "Annual turnover: ₹10 Lakhs+",
+      "Positive business cash flow",
+      "Good credit history"
+    ],
+    "documents": [
+      "Business registration proof",
+      "ITR of last 2 years",
+      "Bank statements (12 months)",
+      "Business address proof",
+      "Financial statements"
+    ]
+  },
+  {
+    "id": "vehicle-loan",
+    "title": "Vehicle Loan",
+    "description": "Drive your dream vehicle home with our easy auto loan options",
+    "icon": "Car",
+    "fullDescription": "Whether you want to buy a new car or a two-wheeler, our vehicle loans come with attractive interest rates and flexible repayment options to make your purchase affordable.",
+    "features": [
+      "Loan amount up to 90% of vehicle cost",
+      "Tenure up to 7 years",
+      "Interest rates from 9.5%",
+      "New and used vehicle financing",
+      "Quick approval process",
+      "Insurance assistance"
+    ],
+    "eligibility": [
+      "Age: 21-65 years",
+      "Minimum income: ₹20,000/month",
+      "Valid driving license",
+      "Stable income source"
+    ],
+    "documents": [
+      "KYC documents",
+      "Income proof",
+      "Address proof",
+      "Vehicle quotation/invoice",
+      "Bank statements (3 months)"
+    ]
+  },
+  {
+    "id": "education-loan",
+    "title": "Education Loan",
+    "description": "Invest in your future with our comprehensive education loan schemes",
+    "icon": "GraduationCap",
+    "fullDescription": "Don't let financial constraints hold you back from quality education. Our education loans cover tuition fees, accommodation, and other related expenses for studies in India and abroad.",
+    "features": [
+      "Loan amount up to ₹40 Lakhs",
+      "Covers tuition, accommodation, books",
+      "Moratorium period available",
+      "Interest rates from 9%",
+      "Tax benefits under Section 80E",
+      "Flexible repayment options"
+    ],
+    "eligibility": [
+      "Student admitted to recognized institution",
+      "Co-applicant required (parent/guardian)",
+      "Good academic record",
+      "Age: 16-35 years"
+    ],
+    "documents": [
+      "Admission letter",
+      "Mark sheets",
+      "Fee structure",
+      "Co-applicant's income proof",
+      "Collateral documents (if applicable)"
+    ]
+  },
+  {
+    "id": "gold-loan",
+    "title": "Gold Loan",
+    "description": "Get instant cash against your gold ornaments at attractive rates",
+    "icon": "Coins",
+    "fullDescription": "Unlock the value of your gold with our secure gold loan services. Get instant liquidity without selling your precious gold ornaments.",
+    "features": [
+      "Loan up to 75% of gold value",
+      "Instant approval and disbursement",
+      "Interest rates from 7.5%",
+      "Flexible tenure options",
+      "No processing fee",
+      "Secure gold storage facility"
+    ],
+    "eligibility": [
+      "Age: 18 years and above",
+      "Valid KYC documents",
+      "Gold purity: 18-22 carats",
+      "Minimum 10 grams of gold"
+    ],
+    "documents": [
+      "Identity proof",
+      "Address proof",
+      "Gold ornaments",
+      "Passport size photograph"
+    ]
+  }
+]

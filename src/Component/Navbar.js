@@ -76,14 +76,9 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item dropdown">
-                <button
-                  className="nav-link dropdown-toggle"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  PRODUCTS & SERVICES
-                </button>
+                <Link className="nav-link" to="/services">PRODUCTS & SERVICES</Link>
+                  
+                
                 <ul className="dropdown-menu">
                   <li><Link className="dropdown-item" to="/commercial-vehicle-finance">COMMERCIAL VEHICLE FINANCE</Link></li>
                   <li><Link className="dropdown-item" to="/secured-business-loans">SECURED BUSINESS LOANS</Link></li>
@@ -121,11 +116,11 @@ const Navbar = () => {
                   RESOURCES & MEDIA
                 </button>
                 <ul className="dropdown-menu">
-                  <li><Link className="dropdown-item" to="/faqs">FAQs</Link></li>
+                  <li><Link className="dropdown-item" to="/FAQ">FAQs</Link></li>
                   <li><Link className="dropdown-item" to="/gallery">GALLERY</Link></li>
                   <li><Link className="dropdown-item" to="/mediakit">MEDIA KIT</Link></li>
                   <li><Link className="dropdown-item" to="/blogs">BLOGS & INSIGHTS</Link></li>
-                  <li><Link className="dropdown-item" to="/calculators">CALCULATORS</Link></li>
+                  <li><Link className="dropdown-item" to="/loancalculator">CALCULATORS</Link></li>
                 </ul>
               </li>
 
@@ -134,7 +129,7 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/careers">CAREERS</Link>
+                <Link className="nav-link" to="/career">CAREER</Link>
               </li>
             </ul>
           </div>
