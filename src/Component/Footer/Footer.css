@@ -1,99 +1,128 @@
-.Footer {
-  background: #f8f9fa; /* Light gray background for better logo contrast */
-  color: #0E3C6E; /* Brand blue for text */
-  padding: 3rem 0;
-  margin-top: 5rem;
-  font-family: 'Poppins', sans-serif;
-  border-top: 4px solid #F6A500; /* Brand yellow accent line */
-}
-
-/* --- Column 1 --- */
-.ft-1 p {
-  padding: 0.5rem 0;
-  font-weight: 400;
-  color: #333;
-}
-
-/* Social Icons */
-.footer-icons i {
-  padding: 0.4rem 0.5rem;
-  background: #0E3C6E;
+/* FOOTER CONTAINER */
+.footer-container {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 30px;
+  background: linear-gradient(145deg, #003B6D, #0A4C90);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-top: 2px solid rgba(255, 255, 255, 0.35);
   color: #fff;
-  margin: 0 0.5rem;
-  border-radius: 100%;
-  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
-.footer-icons i:hover {
-  background: #F6A500;
-  color: #fff;
-  cursor: pointer;
+/* WAVE DESIGN (bright & clear) */
+.footer-wave {
+  position: absolute;
+  top: -65px;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: url("data:image/svg+xml,%3Csvg width='1440' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 Q 360 80 720 40 T 1440 60 V0 H0 Z' fill='%23FFA500' /%3E%3C/svg%3E") 
+    no-repeat center/cover;
+  opacity: 0.9;
 }
 
-/* --- Column 2 (Quick Links) --- */
-.Footer h5 {
-  color: #0E3C6E;
-  margin-bottom: 1rem;
+/* GLASS INNER AREA */
+.footer-inner {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(255,255,255,0.1);
+}
+
+/* TITLES */
+.footer-title span {
+  color: #FFA500;
+  font-weight: bold;
+}
+
+.footer-menu-title {
   font-weight: 600;
+  color: #FFA500;
 }
 
-.ft-2 ul {
-  list-style: none;
-  padding-left: 0;
+/* TEXT */
+.footer-text {
+  color: rgba(255,255,255,0.75);
 }
 
-.ft-2 ul li {
-  padding: 0.35rem 0;
-}
-
-.ft-2 ul a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1.05rem;
+/* SOCIAL ICONS */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
   transition: 0.3s;
 }
-
-.ft-2 ul a:hover {
-  color: #F6A500;
+.social-icon:hover {
+  background: #FFA500;
+  border-color: #FFA500;
+  transform: translateY(-5px);
 }
 
-/* --- Column 3 (Contact) --- */
-.ft-3 p {
-  font-weight: 400;
-  font-size: 1rem;
-  color: #333;
+/* LISTS */
+.footer-list {
+  list-style: none;
+  padding: 0;
 }
 
-.ft-3 i {
-  padding-right: 0.5rem;
-  color: #F6A500;
+.footer-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-/* --- Footer Bottom --- */
+.finance-bullet {
+  color: #FFA500;
+  margin-right: 8px;
+}
+
+/* LINKS */
+.footer-link {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer-link:hover {
+  color: #FFA500;
+  padding-left: 5px;
+}
+
+/* CONTACT */
+.footer-list li {
+  display: flex;
+  gap: 10px;
+  color: rgba(255,255,255,0.8);
+}
+
+.footer-icon {
+  color: #FFA500;
+}
+
+/* DIVIDER */
+.footer-divider {
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* BOTTOM */
 .footer-bottom {
-  background: #0E3C6E;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
 }
 
-.footer-bottom p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #fff;
-}
-
-/* --- Responsive Design --- */
-@media (max-width: 768px) {
-  .Footer {
-    text-align: center;
-  }
-
-  .ft-1 img {
-    width: 60%;
-  }
-
-  .ft-2, .ft-3 {
-    margin-top: 2rem;
-  }
+/* FIXED FOOTER */
+footer.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

@@ -1,24 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import * as Icons from 'lucide-react';
-import { services, testimonials, stats, whyChooseUs } from '../data/Mock.js';
-import SectionTitle from '../Component/SectionTitle';
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import * as Icons from "lucide-react";
+import { services, testimonials, stats } from "../data/Mock.js";
+import SectionTitle from "../Component/SectionTitle";
+import TestimonialCard from "../Component/TestimonialCard";
 
 const Home = () => {
   return (
     <div>
 
-      {/* Hero Section */}
+      {/* ========================= HERO SECTION ========================= */}
       <section
         className="position-relative text-white d-flex align-items-center"
         style={{
-          minHeight: '600px',
+          minHeight: "650px",
           background:
-            'linear-gradient(rgba(0, 59, 109, 0.85), rgba(0, 90, 156, 0.85)), url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80) center/cover',
+            "linear-gradient(rgba(0, 59, 109, 0.8), rgba(0, 59, 109, 0.7)), url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80) center/cover",
         }}
       >
-        <div className="container">
+        <div className="container py-5">
           <div className="row">
             <div className="col-lg-8">
               <motion.div
@@ -29,19 +30,20 @@ const Home = () => {
                 <h1 className="display-3 fw-bold mb-4">
                   Your Trusted Partner for Financial Growth
                 </h1>
-                <p className="fs-5 mb-4">
-                  Quick loan approval, competitive rates, and personalized financial solutions tailored to your needs. Get started in minutes!
+                <p className="fs-5 mb-4 opacity-75">
+                  Quick loan approval, competitive rates, and personalized
+                  financial solutions designed to help you achieve your goals.
                 </p>
 
                 <div className="d-flex gap-3 flex-wrap">
                   <Link
                     to="/apply"
-                    className="btn btn-lg px-4"
+                    className="btn btn-lg px-4 shadow"
                     style={{
-                      backgroundColor: '#FFA500',
-                      color: 'white',
-                      border: 'none',
-                      fontWeight: '600',
+                      backgroundColor: "#FFA500",
+                      color: "white",
+                      fontWeight: "600",
+                      borderRadius: "8px",
                     }}
                   >
                     Apply Now
@@ -49,22 +51,23 @@ const Home = () => {
 
                   <Link
                     to="/services"
-                    className="btn btn-lg btn-outline-light px-4"
-                    style={{ fontWeight: '600' }}
+                    className="btn btn-lg btn-outline-light px-4 shadow-sm"
+                    style={{
+                      fontWeight: "600",
+                      borderRadius: "8px",
+                    }}
                   >
                     Our Services
                   </Link>
                 </div>
-
               </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-
-      {/* Stats Section */}
-      <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
+      {/* ========================= STATS SECTION ========================= */}
+      <section className="py-5" style={{ backgroundColor: "#ffffff" }}>
         <div className="container">
           <div className="row g-4">
             {stats.map((stat, index) => (
@@ -73,13 +76,13 @@ const Home = () => {
                 className="col-lg-3 col-md-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
               >
-                <div className="text-center">
+                <div className="text-center p-3 shadow-sm rounded">
                   <h2
                     className="fw-bold mb-2"
-                    style={{ color: '#003B6D', fontSize: '3rem' }}
+                    style={{ color: "#003B6D", fontSize: "3rem" }}
                   >
                     {stat.value}
                   </h2>
@@ -91,15 +94,21 @@ const Home = () => {
         </div>
       </section>
 
-
-      {/* Services Section */}
-      <section className="py-5" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
+      {/* ========================= SERVICES SECTION ========================= */}
+      <section
+        className="py-5"
+        style={{
+          backgroundColor: "#f8f9fa",
+          paddingTop: "80px",
+          paddingBottom: "80px",
+        }}
+      >
         <div className="container">
 
           <SectionTitle
             subtitle="Our Services"
             title="Financial Solutions for Every Need"
-            description="Choose from our wide range of loan products tailored to meet your personal and business requirements"
+            description="Choose from our wide range of loan products tailored to your personal and business goals."
           />
 
           <div className="row g-4">
@@ -115,21 +124,21 @@ const Home = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="card h-100 border-0 shadow-sm hover-card">
+                  <div className="card h-100 border-0 shadow-sm rounded-4 unique-hover-card">
                     <div className="card-body p-4">
                       <div
-                        className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow-sm"
                         style={{
-                          width: '64px',
-                          height: '64px',
-                          backgroundColor: '#FFA500',
-                          color: 'white',
+                          width: "70px",
+                          height: "70px",
+                          backgroundColor: "#FFA500",
+                          color: "white",
                         }}
                       >
                         {IconComponent && <IconComponent size={32} />}
                       </div>
 
-                      <h4 className="fw-bold mb-3" style={{ color: '#003B6D' }}>
+                      <h4 className="fw-bold mb-3" style={{ color: "#003B6D" }}>
                         {service.name}
                       </h4>
 
@@ -137,11 +146,11 @@ const Home = () => {
 
                       <Link
                         to="/services"
-                        className="btn btn-sm"
+                        className="btn btn-sm px-4 py-2 shadow-sm"
                         style={{
-                          backgroundColor: '#003B6D',
-                          color: 'white',
-                          border: 'none',
+                          backgroundColor: "#003B6D",
+                          color: "white",
+                          borderRadius: "6px",
                         }}
                       >
                         Learn More
@@ -156,162 +165,143 @@ const Home = () => {
           <div className="text-center mt-5">
             <Link
               to="/services"
-              className="btn btn-lg"
+              className="btn btn-lg px-5 py-3 shadow"
               style={{
-                backgroundColor: '#003B6D',
-                color: 'white',
-                border: 'none',
-                fontWeight: '600',
+                backgroundColor: "#003B6D",
+                color: "white",
+                fontWeight: "600",
+                borderRadius: "8px",
               }}
             >
               View All Services
             </Link>
           </div>
-
         </div>
       </section>
 
-
-      {/* Why Choose Us */}
+      {/* ========================= WHY CHOOSE US ========================= */}
       <section
-        className="py-5"
-        style={{ backgroundColor: '#f8f9fa', paddingTop: '80px', paddingBottom: '80px' }}
+        className="why-choose-section py-5"
+        style={{ paddingTop: "80px", paddingBottom: "80px" }}
       >
         <div className="container">
-
           <SectionTitle
-            title="Why Choose Lakshmithra Finance?"
-            subtitle="We are committed to providing the best financial solutions with unmatched service"
+            subtitle="Why Choose Us"
+            title="Your Success is Our Priority"
+            description="We stand out with our customer-first approach and commitment to financial excellence."
           />
 
           <div className="row g-4">
-            {whyChooseUs.map((item, index) => {
-              const IconComponent = Icons[item.icon];
+            {[
+              { icon: "Clock", title: "Quick Approval", desc: "Get your loan approved within 48 hours with minimal documentation." },
+              { icon: "Shield", title: "100% Secure", desc: "Your data is protected with bank-grade encryption." },
+              { icon: "TrendingUp", title: "Best Rates", desc: "Competitive interest rates to suit your financial goals." },
+              { icon: "Users", title: "Expert Support", desc: "Dedicated relationship managers to guide you throughout the process." }
+            ].map((item, index) => {
+              const IconComp = Icons[item.icon];
 
               return (
                 <motion.div
-                  key={item.id}
+                  key={index}
                   className="col-lg-3 col-md-6"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="text-center p-4">
+                  <div className="feature-card text-center p-4 h-100 bg-white rounded-4 shadow-sm">
                     <div
-                      className="rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
-                      style={{
-                        width: '80px',
-                        height: '80px',
-                        backgroundColor: '#003B6D',
-                        color: 'white',
-                      }}
+                      className="icon-wrapper bg-primary bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                      style={{ width: "80px", height: "80px" }}
                     >
-                      {IconComponent && <IconComponent size={36} />}
+                      <IconComp size={40} className="text-primary" />
                     </div>
 
-                    <h5 className="fw-bold mb-3" style={{ color: '#003B6D' }}>
-                      {item.title}
-                    </h5>
-
-                    <p className="text-muted">{item.description}</p>
+                    <h5 className="fw-semibold mb-2">{item.title}</h5>
+                    <p className="text-muted small">{item.desc}</p>
                   </div>
                 </motion.div>
               );
             })}
           </div>
-
         </div>
       </section>
 
-
-      {/* Testimonials */}
-      <section className="py-5" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
+      {/* ========================= TESTIMONIALS ========================= */}
+      <section
+        className="testimonials-section py-5 bg-light"
+        style={{ paddingTop: "80px", paddingBottom: "80px" }}
+      >
         <div className="container">
-
           <SectionTitle
-            title="What Our Customers Say"
-            subtitle="Real experiences from real customers who trust us with their financial needs"
+            subtitle="Testimonials"
+            title="What Our Clients Say"
+            description="Real feedback from customers who achieved their financial goals with us."
           />
 
           <div className="row g-4">
-            {testimonials.map((testimonial, index) => (
+            {testimonials.slice(0, 3).map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
-                className="col-lg-6"
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                className="col-lg-4"
               >
-                <div className="card border-0 shadow-sm h-100">
-                  <div className="card-body p-4">
-                    <div className="mb-3">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Icons.Star
-                          key={i}
-                          size={20}
-                          fill="#FFA500"
-                          color="#FFA500"
-                          className="me-1"
-                        />
-                      ))}
-                    </div>
-
-                    <p className="text-muted mb-4" style={{ fontSize: '1.05rem' }}>
-                      "{testimonial.content}"
-                    </p>
-
-                    <div>
-                      <h6 className="fw-bold mb-0" style={{ color: '#003B6D' }}>
-                        {testimonial.name}
-                      </h6>
-                      <small className="text-muted">{testimonial.role}</small>
-                    </div>
-                  </div>
-                </div>
+                <TestimonialCard {...testimonial} />
               </motion.div>
             ))}
           </div>
-
         </div>
       </section>
 
-
-      {/* CTA */}
+      {/* ========================= CTA SECTION ========================= */}
       <section
-        className="py-5 text-white"
+        className="cta-section text-white py-5"
         style={{
-          background: 'linear-gradient(135deg, #003B6D 0%, #005A9C 100%)',
-          paddingTop: '80px',
-          paddingBottom: '80px',
+          paddingTop: "80px",
+          paddingBottom: "80px",
+          backgroundColor: "#003B6D",
         }}
       >
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-8">
-              <h2 className="fw-bold mb-3">Ready to Get Started?</h2>
-              <p className="fs-5 mb-4 mb-lg-0">
-                Apply for a loan today and get instant approval. Our team is ready to help you achieve your financial goals.
-              </p>
-            </div>
+        <div className="container text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Icons.Award size={64} className="mb-4 text-warning" />
 
-            <div className="col-lg-4 text-lg-end">
+            <h2 className="display-4 fw-bold mb-4">Ready to Get Started?</h2>
+
+            <p
+              className="lead mb-5 mx-auto"
+              style={{ maxWidth: "600px" }}
+            >
+              Take the first step toward your financial goals.  
+              Apply now and receive instant approval!
+            </p>
+
+            <div className="d-flex gap-3 justify-content-center flex-wrap">
               <Link
-                to="/apply"
-                className="btn btn-lg px-5"
-                style={{
-                  backgroundColor: '#FFA500',
-                  color: 'white',
-                  border: 'none',
-                  fontWeight: '600',
-                }}
+                to="/contact"
+                className="btn btn-warning btn-lg px-5 py-3 shadow"
+                style={{ borderRadius: "8px" }}
               >
-                Apply Now
+                Apply for Loan
+              </Link>
+
+              <Link
+                to="/calculator"
+                className="btn btn-outline-light btn-lg px-5 py-3 shadow-sm"
+                style={{ borderRadius: "8px" }}
+              >
+                Calculate EMI
               </Link>
             </div>
-
-          </div>
+          </motion.div>
         </div>
       </section>
 
