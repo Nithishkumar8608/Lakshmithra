@@ -1,0 +1,104 @@
+/* --------------------------------------
+   HERO SECTION
+--------------------------------------- */
+.gallery-hero {
+  background: #003B6D !important;
+}
+
+/* --------------------------------------
+   ICON CIRCLE
+--------------------------------------- */
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.icon-circle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+/* --------------------------------------
+   CARD
+--------------------------------------- */
+.gallery-card {
+  transition: 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* --------------------------------------
+   IMAGE & ZOOM
+--------------------------------------- */
+.gallery-img-wrapper {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.gallery-img-wrapper:hover .gallery-img {
+  transform: scale(1.12);
+}
+
+/* --------------------------------------
+   CATEGORY BADGE
+--------------------------------------- */
+.category-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  border-radius: 30px;
+  background: #003B6D;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* --------------------------------------
+   CTA BUTTON
+--------------------------------------- */
+.cta-btn {
+  background: #FFA500;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #e69100;
+  transform: translateY(-3px);
+}
+
+/* --------------------------------------
+   RESPONSIVE
+--------------------------------------- */
+@media (max-width: 576px) {
+  .gallery-img-wrapper {
+    height: 200px;
+  }
+  .icon-circle {
+    width: 70px;
+    height: 70px;
+  }
+}

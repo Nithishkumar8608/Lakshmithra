@@ -15,6 +15,8 @@ import FAQ from './Pages/FAQ';
 import LoanCalculator from './Pages/LoanCalculator';
 import Career from './Pages/Career';
 import ServiceDetail from './Pages/ServiceDetails';
+import Gallery from './Pages/Gallery';
+import Blog from './Pages/Blog';
 
 
 
@@ -33,6 +35,9 @@ function App() {
         <Route path='/faq' element={<FAQ/>}/>
         <Route path='/loancalculator' element={<LoanCalculator/>}/>
         <Route path='/career' element={<Career/>}/>
+        <Route path='/gallery' element={<Gallery/>}/>
+        <Route path='/blogs' element={<Blog/>}/>
+
 
       </Routes>
       <Footer/>

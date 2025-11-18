@@ -1,0 +1,50 @@
+/* Primary theme colors */
+:root {
+  --primary: #003B6D;
+  --secondary: #FFA500;
+}
+
+/* HERO SECTION */
+.blog-hero {
+  background: var(--primary);
+}
+
+/* BLOG CARD HOVER */
+.blog-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 59, 109, 0.25);
+}
+
+/* FEATURED CARD BORDER */
+.featured-card {
+  border: 3px solid var(--primary) !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.btn-outline-primary {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+}
+
+/* Badge */
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-warning {
+  background-color: var(--secondary) !important;
+}
