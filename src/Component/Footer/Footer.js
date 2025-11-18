@@ -20,6 +20,7 @@ const financeIcons = [CircleDollarSign, Wallet, CreditCard, TrendingUp];
 const Footer = () => {
   return (
     <footer className="footer-container">
+
       {/* Wave Top */}
       <div className="footer-wave"></div>
 
@@ -62,16 +63,24 @@ const Footer = () => {
           <div className="col-lg-2 col-md-6">
             <h5 className="footer-menu-title">Quick Links</h5>
             <ul className="footer-list">
-              {["Home", "About Us", "Services", "Loan Calculator", "Career"].map(
-                (item, i) => (
-                  <li key={i} className="footer-item">
-                    <span className="finance-bullet">
-                      {React.createElement(financeIcons[i % 4], { size: 16 })}
-                    </span>
-                    <Link to="/" className="footer-link">{item}</Link>
-                  </li>
-                )
-              )}
+
+              {[
+                { name: "Home", link: "/" },
+                { name: "About Us", link: "/about" },
+                { name: "Services", link: "/services" },
+                { name: "Loan Calculator", link: "/loancalculator" },
+                { name: "Career", link: "/career" }
+              ].map(({ name, link }, i) => (
+                <li key={i} className="footer-item">
+                  <span className="finance-bullet">
+                    {React.createElement(financeIcons[i % 4], { size: 16 })}
+                  </span>
+                  <Link to={link} className="footer-link">
+                    {name}
+                  </Link>
+                </li>
+              ))}
+
             </ul>
           </div>
 
@@ -79,20 +88,24 @@ const Footer = () => {
           <div className="col-lg-3 col-md-6">
             <h5 className="footer-menu-title">Our Services</h5>
             <ul className="footer-list">
+
               {[
-                "Personal Loan",
-                "Home Loan",
-                "Business Loan",
-                "Vehicle Loan",
-                "Education Loan",
-              ].map((item, i) => (
+                { name: "Personal Loan", link: "/services/personal-loan" },
+                { name: "Home Loan", link: "/services/home-loan" },
+                { name: "Business Loan", link: "/services/business-loan" },
+                { name: "Vehicle Loan", link: "/services/vehicle-loan" },
+                { name: "Education Loan", link: "/services/education-loan" }
+              ].map(({ name, link }, i) => (
                 <li key={i} className="footer-item">
                   <span className="finance-bullet">
                     {React.createElement(financeIcons[(i + 2) % 4], { size: 16 })}
                   </span>
-                  <Link to="/" className="footer-link">{item}</Link>
+                  <Link to={link} className="footer-link">
+                    {name}
+                  </Link>
                 </li>
               ))}
+
             </ul>
           </div>
 
@@ -114,17 +127,21 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
         </div>
 
         <hr className="footer-divider" />
 
+        {/* Footer Bottom */}
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Lakshmithra Finance. All rights reserved.</p>
+
           <p>
             <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link> |
             <Link to="/terms-conditions" className="footer-link"> Terms & Conditions</Link>
           </p>
         </div>
+
       </div>
     </footer>
   );

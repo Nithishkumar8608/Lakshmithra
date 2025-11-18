@@ -17,6 +17,8 @@ import Career from './Pages/Career';
 import ServiceDetail from './Pages/ServiceDetails';
 import Gallery from './Pages/Gallery';
 import Blog from './Pages/Blog';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+import TermsConditions from './Pages/Terms&Conditions';
 
 
 
@@ -37,6 +39,8 @@ function App() {
         <Route path='/career' element={<Career/>}/>
         <Route path='/gallery' element={<Gallery/>}/>
         <Route path='/blogs' element={<Blog/>}/>
+        <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
+        <Route path='/terms-conditions' element={<TermsConditions/>}/>
 
 
       </Routes>
