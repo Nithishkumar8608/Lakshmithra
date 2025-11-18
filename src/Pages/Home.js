@@ -79,7 +79,7 @@ const Home = () => {
                 <div className="text-center">
                   <h2
                     className="fw-bold mb-2"
-                    style={{ color: '#FFA500', fontSize: '3rem' }}
+                    style={{ color: '#003B6D', fontSize: '3rem' }}
                   >
                     {stat.value}
                   </h2>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Rajesh Kumar",
+    "designation": "Business Owner",
+    "content": "Lakshmithra Finance helped me expand my business with their quick business loan approval. The interest rates were competitive and the staff was very professional. Highly recommended!",
+    "rating": 5,
+    "image": "RK"
+  },
+  {
+    "id": 2,
+    "name": "Priya Sharma",
+    "designation": "Software Engineer",
+    "content": "Getting my home loan approved was seamless. The team guided me through every step and the documentation process was hassle-free. Now I am a proud homeowner thanks to Lakshmithra Finance!",
+    "rating": 5,
+    "image": "PS"
+  },
+  {
+    "id": 3,
+    "name": "Anil Reddy",
+    "designation": "Entrepreneur",
+    "content": "The gold loan facility is excellent. I got instant cash when I needed it urgently. The interest rates are very reasonable and my gold is in safe hands. Great service!",
+    "rating": 5,
+    "image": "AR"
+  },
+  {
+    "id": 4,
+    "name": "Sneha Patel",
+    "designation": "Student",
+    "content": "My education loan for studying abroad was approved quickly. The moratorium period helped me focus on my studies without worrying about immediate repayments. Thank you Lakshmithra Finance!",
+    "rating": 5,
+    "image": "SP"
+  },
+  {
+    "id": 5,
+    "name": "Vikram Singh",
+    "designation": "Marketing Manager",
+    "content": "I purchased my dream car with their vehicle loan. The process was transparent, rates were competitive, and disbursement was quick. Excellent customer service throughout!",
+    "rating": 5,
+    "image": "VS"
+  },
+  {
+    "id": 6,
+    "name": "Meera Krishnan",
+    "designation": "Teacher",
+    "content": "The personal loan helped me during a medical emergency in my family. The approval was within 48 hours and the staff showed great empathy. Truly customer-centric company!",
+    "rating": 5,
+    "image": "MK"
+  }
+]
