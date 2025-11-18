@@ -97,8 +97,9 @@ const Home = () => {
         <div className="container">
 
           <SectionTitle
-            title="Our Services"
-            subtitle="Comprehensive loan solutions designed to meet your financial needs"
+            subtitle="Our Services"
+            title="Financial Solutions for Every Need"
+            description="Choose from our wide range of loan products tailored to meet your personal and business requirements"
           />
 
           <div className="row g-4">
@@ -157,7 +158,7 @@ const Home = () => {
               to="/services"
               className="btn btn-lg"
               style={{
-                backgroundColor: '#FFA500',
+                backgroundColor: '#003B6D',
                 color: 'white',
                 border: 'none',
                 fontWeight: '600',
