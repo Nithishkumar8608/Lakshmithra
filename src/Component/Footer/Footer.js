@@ -120,15 +120,15 @@ const Footer = () => {
             <ul className="footer-list contact-list">
               <li>
                 <MapPin size={20} className="footer-icon" />
-                <span>123, Financial District, Mumbai, Maharashtra</span>
+                <span>3/260, Moovendar Street, M.A.Nagar, Redhills, Chennai - 600 052</span>
               </li>
               <li>
                 <Phone size={20} className="footer-icon" />
-                <span>+91 98765 43210</span>
+                <span>+91 - 96006 - 84363</span>
               </li>
               <li>
                 <Mail size={20} className="footer-icon" />
-                <span>info@lakshmithrafinance.com</span>
+                <span>customercare@lakshmithra.com</span>
               </li>
             </ul>
           </div>

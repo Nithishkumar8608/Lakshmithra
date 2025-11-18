@@ -37,7 +37,7 @@ const Home = () => {
 
                 <div className="d-flex gap-3 flex-wrap">
                   <Link
-                    to="/apply"
+                    to="/contact"
                     className="btn btn-lg px-4 shadow"
                     style={{
                       backgroundColor: "#FFA500",
@@ -294,7 +294,7 @@ const Home = () => {
               </Link>
 
               <Link
-                to="/calculator"
+                to="/loancalculator"
                 className="btn btn-outline-light btn-lg px-5 py-3 shadow-sm"
                 style={{ borderRadius: "8px" }}
               >

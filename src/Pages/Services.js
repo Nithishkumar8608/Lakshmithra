@@ -172,7 +172,7 @@ function Services() {
             <h2 className="text-white mb-4">Ready to Apply for a Loan?</h2>
             <p className="text-white mb-4">Get started with your loan application today and receive funds within 48 hours</p>
             <div className="cta-buttons">
-              <Link to="/apply" className="btn btn-secondary-custom btn-lg me-3">Apply Now</Link>
+              <Link to="/contact" className="btn btn-warning btn-lg me-3">Apply Now</Link>
               <Link to="/contact" className="btn btn-outline-light btn-lg">Contact Us</Link>
             </div>
           </motion.div>

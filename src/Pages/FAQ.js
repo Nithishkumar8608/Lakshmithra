@@ -62,7 +62,7 @@ const FAQ = () => {
       </section>
 
       {/* ====== CALL TO ACTION ====== */}
-      <section className="py-5 bg-warning" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+      <section className="py-5 bg-primary" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -71,17 +71,17 @@ const FAQ = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="display-6 fw-bold mb-3">Still Have Questions?</h2>
-            <p className="text-muted mb-4">
+            <h2 className="display-6 text-white fw-bold mb-3">Still Have Questions?</h2>
+            <p className="text-white mb-4">
               Can't find what you're looking for? Our team is here to help you.
             </p>
             <div className="d-flex gap-3 justify-content-center flex-wrap">
-              <a href="tel:+919876543210" className="btn btn-primary btn-lg px-5">
+              <a href="tel:+919876543210" className="btn btn-warning btn-lg px-5">
                 Call Us Now
               </a>
               <a
                 href="mailto:info@lakshmithrafinance.com"
-                className="btn btn-outline-primary btn-lg px-5"
+                className="btn btn-outline text-white btn-lg px-5"
               >
                 Email Support
               </a>
