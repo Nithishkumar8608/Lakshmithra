@@ -30,7 +30,12 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-lg-4 col-md-6">
             <h4 className="footer-title">
-              <span>Lakshmithra</span> Finance
+              <img
+                src={require("../../assets/logo.png")}
+                alt="Lakshmithra Finance Logo"
+                className="footer-logo"
+                width={"75%"}
+              />
             </h4>
 
             <p className="footer-text">
