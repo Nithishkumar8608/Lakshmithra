@@ -81,7 +81,7 @@ const FAQ = () => {
               </a>
               <a
                 href="mailto:info@lakshmithrafinance.com"
-                className="btn btn-outline text-white btn-lg px-5"
+                className="btn btn-outline-light btn-lg px-5"
               >
                 Email Support
               </a>
