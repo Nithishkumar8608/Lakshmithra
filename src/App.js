@@ -19,13 +19,30 @@ import Gallery from './Pages/Gallery';
 import Blog from './Pages/Blog';
 import PrivacyPolicy from './Pages/PrivacyPolicy';
 import TermsConditions from './Pages/Terms&Conditions';
+import { useEffect, useState } from 'react';
+import Preloader from './Component/Preloader';
 
 
 
 function App() {
+
+   const [loading, setLoading] = useState(true);
+  
+   useEffect(() => {
+    // Simulate loading time
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  if (loading) {
+    return <Preloader />;
+  }
+
   return (
     <>
      <BrowserRouter>
+     
       <Navbar />
       <Routes>
         
