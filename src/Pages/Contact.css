@@ -89,6 +89,108 @@
   box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.15);
 }
 
+.branches-section {
+  background: linear-gradient(135deg, rgba(0, 59, 109, 0.03) 0%, rgba(255, 165, 0, 0.03) 100%);
+  padding: 80px 0;
+}
+
+.branches-section .section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #003B6D;
+  margin-bottom: 15px;
+}
+
+.branches-section .section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.branch-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+  height: 100%;
+}
+
+.branch-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  border-left-color: #FFA500;
+}
+
+.branch-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.branch-icon {
+  color: #FFA500;
+  min-width: 24px;
+}
+
+.branch-header h5 {
+  color: #003B6D;
+  font-weight: 700;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.branch-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.branch-address {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.branch-address strong {
+  color: #003B6D;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.branch-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.info-icon {
+  color: #FFA500;
+  min-width: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.branch-info a {
+  color: #003B6D;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  word-break: break-word;
+}
+
+.branch-info a:hover {
+  color: #FFA500;
+  text-decoration: underline;
+}
+
 .map-section {
   margin-top: 3rem;
 }
@@ -123,5 +225,25 @@
   .contact-info-card:hover {
     transform: translateX(0);
     transform: translateY(-5px);
+  }
+
+  .branches-section {
+    padding: 60px 0;
+  }
+
+  .branches-section .section-title {
+    font-size: 2rem;
+  }
+
+  .branch-card {
+    padding: 25px;
+  }
+
+  .branch-header h5 {
+    font-size: 1.1rem;
+  }
+
+  .branch-info {
+    font-size: 0.9rem;
   }
 }

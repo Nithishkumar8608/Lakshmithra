@@ -200,6 +200,81 @@ function Contact() {
         </div>
       </section>
 
+      <section className="branches-section py-5">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2 className="section-title">Our Branches</h2>
+            <p className="section-subtitle">Visit us at any of our conveniently located branches</p>
+          </div>
+          <div className="row g-4">
+            {[
+              {
+                city: 'Chennai (Head Office)',
+                address: '3/260, Moovendar Street, M.A.Nagar, Redhills, Chennai - 600 052',
+                phone: '+91 - 96006 - 84363',
+                email: 'customercare@lakshmithra.com',
+                hours: 'Mon - Fri: 9:00 AM - 6:00 PM, Sat: 9:00 AM - 2:00 PM'
+              },
+              {
+                city: 'Bangalore Branch',
+                address: '123 MG Road, Bangalore - 560001',
+                phone: '+91 - 98765 - 43210',
+                email: 'bangalore@lakshmithra.com',
+                hours: 'Mon - Fri: 9:00 AM - 6:00 PM, Sat: 9:00 AM - 2:00 PM'
+              },
+              {
+                city: 'Hyderabad Branch',
+                address: '456 Hitech City, Hyderabad - 500081',
+                phone: '+91 - 99999 - 88888',
+                email: 'hyderabad@lakshmithra.com',
+                hours: 'Mon - Fri: 9:00 AM - 6:00 PM, Sat: 9:00 AM - 2:00 PM'
+              },
+              {
+                city: 'Mumbai Branch',
+                address: '789 Bandra Kurla Complex, Mumbai - 400051',
+                phone: '+91 - 97777 - 66666',
+                email: 'mumbai@lakshmithra.com',
+                hours: 'Mon - Fri: 9:00 AM - 6:00 PM, Sat: 9:00 AM - 2:00 PM'
+              }
+            ].map((branch, idx) => (
+              <motion.div
+                key={idx}
+                className="col-lg-6 col-md-6"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="branch-card">
+                  <div className="branch-header">
+                    <MapPin size={24} className="branch-icon" />
+                    <h5>{branch.city}</h5>
+                  </div>
+                  <div className="branch-content">
+                    <p className="branch-address">
+                      <strong>Address:</strong><br />
+                      {branch.address}
+                    </p>
+                    <p className="branch-info">
+                      <Phone size={16} className="info-icon" />
+                      <a href={`tel:${branch.phone.replace(/\s+/g, '')}`}>{branch.phone}</a>
+                    </p>
+                    <p className="branch-info">
+                      <Mail size={16} className="info-icon" />
+                      <a href={`mailto:${branch.email}`}>{branch.email}</a>
+                    </p>
+                    <p className="branch-info">
+                      <Clock size={16} className="info-icon" />
+                      <span>{branch.hours}</span>
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="map-section">
         <div className="container-fluid p-0">
           <motion.div
