@@ -29,17 +29,22 @@ const Career = () => {
     <div className="career-page">
       
       {/* ===== HERO SECTION ===== */}
-      <section className="page-hero bg-primary text-white py-5">
-        <div className="container" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+      <section 
+        className="contact-hero"
+        style={{
+          minHeight: "500px",
+          background: "linear-gradient(135deg, rgba(0, 59, 109, 0.85), rgba(0, 90, 156, 0.85)), url(https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80) center/cover"
+        }}
+      >
+        <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <Briefcase size={64} className="mb-3" />
-            <h1 className="display-3 fw-bold mb-3">Join Our Team</h1>
-            <p className="lead">Build your career with India's leading finance company</p>
+            <h1 className="contact-hero-title">Join Our Team</h1>
+            <p className="contact-hero-subtitle">Build your career with India's leading finance company</p>
           </motion.div>
         </div>
       </section>

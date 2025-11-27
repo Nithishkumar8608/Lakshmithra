@@ -1,10 +1,12 @@
 .hero-section {
-  
   background-image: url("../assets/hero-bg.jpg");
-  padding: 150px 0 100px;
+  padding: 60px 0;
+  min-height: 40px;
   color: white;
   position: relative;
-  overflow: linear-gradient(#005A9C);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .hero-section::before {
@@ -190,7 +192,7 @@
 
 @media (max-width: 992px) {
   .hero-section {
-    padding: 120px 0 80px;
+    padding: 60px 0;
   }
 
   .hero-title {

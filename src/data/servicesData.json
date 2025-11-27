@@ -1,7 +1,72 @@
 [
   {
+    "id": "personal-loan",
+    "title": "Personal Loan",
+    "shortDesc": "Fast personal loans for any purpose",
+    "description": "Get quick cash for your personal needs with minimal documentation",
+    "icon": "User",
+    "fullDescription": "Our personal loans are designed to meet your immediate financial needs. Whether for medical emergencies, travel, education, or any other purpose, we provide quick approval with flexible repayment terms.",
+    "features": [
+      "Loan amount up to ₹25 Lakhs",
+      "Flexible tenure up to 5 years",
+      "Competitive interest rates from 11%",
+      "No collateral required",
+      "Instant approval",
+      "Minimal documentation",
+      "Top-up facility available"
+    ],
+    "eligibility": [
+      "Age: 21-65 years",
+      "Minimum income: ₹15,000/month",
+      "Stable employment (minimum 1 year)",
+      "Credit score: 650+"
+    ],
+    "documents": [
+      "PAN card & Aadhaar",
+      "Salary slip (last 3 months)",
+      "Bank statements (6 months)",
+      "Address proof",
+      "Employment letter"
+    ],
+    "interestRate": "11% - 18%",
+    "processingTime": "24-48 hours"
+  },
+  {
+    "id": "home-loan",
+    "title": "Home Loan",
+    "shortDesc": "Affordable home financing for your dream home",
+    "description": "Build your dream home with our affordable home loan solutions",
+    "icon": "Home",
+    "fullDescription": "Achieve your dream of owning a home with our flexible home loan options. We offer competitive rates, flexible tenures, and hassle-free documentation for both new construction and resale properties.",
+    "features": [
+      "Loan amount up to ₹1 Crore",
+      "Flexible tenure up to 30 years",
+      "Interest rates from 7.5%",
+      "Up to 90% financing available",
+      "Quick approval & disbursement",
+      "Balance transfer facility",
+      "Tax benefits available"
+    ],
+    "eligibility": [
+      "Age: 21-65 years",
+      "Minimum income: ₹25,000/month",
+      "Good credit history",
+      "Stable employment/business"
+    ],
+    "documents": [
+      "PAN & Aadhaar",
+      "Salary slips (last 12 months)",
+      "Bank statements (12 months)",
+      "Property documents",
+      "ITR (last 2 years)"
+    ],
+    "interestRate": "7.5% - 9.5%",
+    "processingTime": "7-10 days"
+  },
+  {
     "id": "business-loan",
     "title": "Business Loan",
+    "shortDesc": "Flexible capital for business growth",
     "description": "Expand your business with our tailored business financing solutions",
     "icon": "Briefcase",
     "fullDescription": "Fuel your business growth with our flexible business loans. Whether you need working capital, equipment financing, or expansion funds, we provide customized solutions for your business needs.",
@@ -11,7 +76,8 @@
       "Competitive interest rates from 12%",
       "Minimal collateral requirements",
       "Quick disbursement",
-      "Overdraft facility available"
+      "Overdraft facility available",
+      "Business line of credit option"
     ],
     "eligibility": [
       "Business vintage: Minimum 2 years",
@@ -25,11 +91,14 @@
       "Bank statements (12 months)",
       "Business address proof",
       "Financial statements"
-    ]
+    ],
+    "interestRate": "12% - 18%",
+    "processingTime": "5-7 days"
   },
   {
     "id": "vehicle-loan",
     "title": "Vehicle Loan",
+    "shortDesc": "Drive your dream vehicle today",
     "description": "Drive your dream vehicle home with our easy auto loan options",
     "icon": "Car",
     "fullDescription": "Whether you want to buy a new car or a two-wheeler, our vehicle loans come with attractive interest rates and flexible repayment options to make your purchase affordable.",
@@ -39,7 +108,8 @@
       "Interest rates from 9.5%",
       "New and used vehicle financing",
       "Quick approval process",
-      "Insurance assistance"
+      "Insurance assistance",
+      "Easy fund transfer"
     ],
     "eligibility": [
       "Age: 21-65 years",
@@ -53,8 +123,71 @@
       "Address proof",
       "Vehicle quotation/invoice",
       "Bank statements (3 months)"
-    ]
+    ],
+    "interestRate": "9.5% - 14%",
+    "processingTime": "2-3 days"
+  },
+  {
+    "id": "education-loan",
+    "title": "Education Loan",
+    "shortDesc": "Invest in your future with education loans",
+    "description": "Fund your higher education with our affordable education loan solutions",
+    "icon": "GraduationCap",
+    "fullDescription": "Pursue your dreams of higher education without financial constraints. Our education loans cover tuition fees, hostel charges, and other educational expenses with flexible repayment options.",
+    "features": [
+      "Loan amount up to ₹20 Lakhs",
+      "Covers domestic and foreign education",
+      "Flexible repayment (6 months after course)",
+      "Competitive interest rates from 8%",
+      "No collateral up to ₹7.5 Lakhs",
+      "Co-applicant option",
+      "Partial payment flexibility"
+    ],
+    "eligibility": [
+      "Age: 16-35 years",
+      "Admission in recognized institution",
+      "Good academic record",
+      "Co-applicant: Parent/Guardian"
+    ],
+    "documents": [
+      "Admit card from institute",
+      "Fee structure document",
+      "Academic records",
+      "ID proof",
+      "Address proof"
+    ],
+    "interestRate": "8% - 12%",
+    "processingTime": "5-7 days"
+  },
+  {
+    "id": "gold-loan",
+    "title": "Gold Loan",
+    "shortDesc": "Quick cash against gold jewelry",
+    "description": "Get instant liquidity by pledging your gold with competitive rates",
+    "icon": "Coins",
+    "fullDescription": "Convert your gold jewelry into quick cash with our hassle-free gold loan facility. We offer transparent pricing, fair valuation, and flexible repayment terms for your financial emergencies.",
+    "features": [
+      "Loan up to 75% of gold value",
+      "Instant approval and disbursement",
+      "Competitive interest rates from 10%",
+      "Flexible repayment period",
+      "Fully insured storage",
+      "No income proof required",
+      "Low documentation"
+    ],
+    "eligibility": [
+      "Age: 18+ years",
+      "Gold purity: 18K and above",
+      "No income proof needed",
+      "Indian resident"
+    ],
+    "documents": [
+      "ID proof",
+      "Address proof",
+      "Gold for pledging",
+      "Optional: PAN card"
+    ],
+    "interestRate": "10% - 15%",
+    "processingTime": "Same day"
   }
-  
-  
 ]

@@ -32,7 +32,13 @@ function Contact() {
 
   return (
     <div className="contact-page">
-      <section className="contact-hero">
+      <section 
+        className="contact-hero"
+        style={{
+          minHeight: "500px",
+          background: "linear-gradient(135deg, rgba(0, 59, 109, 0.85), rgba(0, 90, 156, 0.85)), url(https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80) center/cover"
+        }}
+      >
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

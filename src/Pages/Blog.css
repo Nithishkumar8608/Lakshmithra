@@ -7,6 +7,10 @@
 /* HERO SECTION */
 .blog-hero {
   background: var(--primary);
+  padding: 60px 0;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 /* BLOG CARD HOVER */

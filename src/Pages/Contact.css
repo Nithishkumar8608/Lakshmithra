@@ -1,7 +1,10 @@
 .contact-hero {
   background: linear-gradient(135deg, #003B6D 0%, #005A9C 100%);
-  padding: 150px 0 100px;
+  padding: 60px 0;
+  min-height: 40px;
   color: white;
+  display: flex;
+  align-items: center;
 }
 
 .contact-hero-title {
@@ -206,7 +209,7 @@
 
 @media (max-width: 768px) {
   .contact-hero {
-    padding: 120px 0 80px;
+    padding: 60px 0;
   }
 
   .contact-hero-title {

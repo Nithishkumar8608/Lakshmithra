@@ -23,8 +23,8 @@ const SectionTitle = ({ title, subtitle,description, centered = true }) => {
       
       {description && (
         <p
-          className="text-muted fs-5"
-          style={{ color: '#003B6D', maxWidth: '700px', margin: centered ? '0 auto' : '0' }}
+          className=" fs-5"
+          style={{ color: '#cccccc', maxWidth: '700px', margin: centered ? '0 auto' : '0' }}
         >
           {description}
         </p>
