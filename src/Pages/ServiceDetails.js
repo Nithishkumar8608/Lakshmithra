@@ -95,7 +95,7 @@ const ServiceDetail = () => {
               <Link to="/contact" className="btn-detail-primary">
                 Apply now
               </Link>
-              <Link to="/calculator" className="btn-detail-secondary">
+              <Link to="/loancalculator" className="btn-detail-secondary">
                 Calculate EMI
               </Link>
             </div>

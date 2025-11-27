@@ -6,24 +6,6 @@ import "./About.css";
 import SectionTitle from "../Component/SectionTitle";
 
 const About = () => {
-  const heroHighlights = [
-    {
-      icon: "Feather",
-      title: "Human touch",
-      desc: "Embedded relationship pods stay with customers for life moments."
-    },
-    {
-      icon: "Compass",
-      title: "Guided journeys",
-      desc: "Design strategists choreograph every step with clarity and warmth."
-    },
-    {
-      icon: "Globe",
-      title: "Impact network",
-      desc: "Local partners amplify reach while maintaining Lakshmithra quality."
-    }
-  ];
-
   const signatureThemes = [
     {
       icon: "Sparkles",
