@@ -1,7 +1,6 @@
 import React from "react";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import "./Blog.css";
 import SectionTitle from "../Component/SectionTitle";
 
@@ -269,7 +268,7 @@ function Blog() {
       </section>
 
       {/* CTA SECTION */}
-      <section
+      {/* <section
         className="py-5 text-white"
         style={{
           backgroundColor: "#f8f9fa",
@@ -324,7 +323,7 @@ function Blog() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

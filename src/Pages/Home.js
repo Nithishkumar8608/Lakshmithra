@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, color } from "framer-motion";
 import * as Icons from "lucide-react";
 import { services, testimonials, stats, processSteps, whyChooseUs } from "../data/Mock.js";
 import SectionTitle from "../Component/SectionTitle";
-import TestimonialCard from "../Component/TestimonialCard";
+import "./Home.css";
 
 const offeringBadges = [
   { icon: "Briefcase", title: "MSME Growth", detail: "₹50L custom term limits" },
@@ -93,15 +93,50 @@ const insightTabs = [
   }
 ];
 
+const workflowVisuals = [
+  { icon: "PiggyBank", accent: "linear-gradient(135deg, #daeafeff, #8ecdf7ff)" },
+  { icon: "UserCheck", accent: "linear-gradient(135deg, #daeafeff, #8ecdf7ff)" },
+  { icon: "FileText", accent: "linear-gradient(135deg, #daeafeff, #8ecdf7ff)" },
+  { icon: "Smartphone", accent: "linear-gradient(135deg, #daeafeff, #8ecdf7ff)" }
+];
+
+const testimonialStatsData = [
+  {
+    id: "reach",
+    value: "12k+",
+    title: "Portfolios guided",
+    description: "Custom loan strategies delivered for ambitious founders, families, and SMEs."
+  },
+  {
+    id: "transparency",
+    value: "0%",
+    title: "Hidden fees",
+    description: "Advisory, underwriting, and servicing stay transparent through every interaction."
+  }
+];
+
+const getInitials = (name = "") =>
+  name
+    .split(" ")
+    .map((part) => part.trim().charAt(0))
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+
 const Home = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const ActiveInsight = insightTabs[activeTab];
   const currentSlide = heroSlides[activeSlide];
-  const badgeSet = currentSlide.badges || offeringBadges;
+  const currentTestimonial = testimonials[activeTestimonial];
+  const testimonialInitials = currentTestimonial ? getInitials(currentTestimonial.name) : "";
 
   const goToPrevSlide = () => setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
   const goToNextSlide = () => setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+  const goToPrevTestimonial = () => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const goToNextTestimonial = () => setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -110,11 +145,18 @@ const Home = () => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const testimonialTimer = setInterval(() => {
+      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 60000);
+    return () => clearInterval(testimonialTimer);
+  }, []);
+
   return (
     <div>
-       <section
+      <section
         className="position-relative text-white overflow-hidden"
-        style={{ minHeight: "720px" }}
+        style={{ minHeight: "600px" }}
       >
         <AnimatePresence mode="wait">
           <motion.div
@@ -137,7 +179,7 @@ const Home = () => {
         />
         <div className="container position-relative py-5">
           <div className="row align-items-center g-5">
-            <div className="col-lg-7">
+            <div className="col-12">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide.title}
@@ -146,13 +188,13 @@ const Home = () => {
                   exit={{ opacity: 0, y: -30 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <p className="text-uppercase tracking-wider mb-3" style={{ letterSpacing: "0.3em", color: "#FFA500" }}>
+                  <p className="text-uppercase fw-bold mb-3" style={{ letterSpacing: "0.2em", color: "#FFA500", fontSize: "0.75rem", fontWeight: 600 }}>
                     {currentSlide.eyebrow}
                   </p>
-                  <h1 className="display-3 fw-bold mb-4" style={{ lineHeight: 1.1 }}>
+                  <h1 className="display-3 fw-bold mb-4" style={{ lineHeight: 1.2, fontWeight: 700, color: "white" }}>
                     {currentSlide.title}
                   </h1>
-                  <p className="fs-5 mb-4 opacity-85" style={{ maxWidth: "640px" }}>
+                  <p className="mb-4" style={{ maxWidth: "640px", color: "white", fontSize: "1rem", fontWeight: 400, lineHeight: 1.6, opacity: 0.95 }}>
                     {currentSlide.description}
                   </p>
                   <div className="d-flex flex-wrap gap-3">
@@ -174,65 +216,6 @@ const Home = () => {
                         {currentSlide.secondaryCta.label}
                       </Link>
                     )}
-                  </div>
-                  <div className="row g-3 mt-4">
-                    {currentSlide.highlights?.map((item) => {
-                      const Icon = Icons[item.icon];
-                      return (
-                        <div key={item.title} className="col-md-4">
-                          <div
-                            className="h-100 p-4 rounded-4"
-                            style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)" }}
-                          >
-                            <div className="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style={{ width: 48, height: 48, backgroundColor: "rgba(255,255,255,0.12)" }}>
-                              {Icon && <Icon size={24} />}
-                            </div>
-                            <h3 className="fw-bold mb-1" style={{ color: "#FFA500" }}>
-                              {item.title}
-                            </h3>
-                            <p className="mb-0 text-white-50">{item.desc}</p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-            <div className="col-lg-5">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`badge-${currentSlide.title}`}
-                  initial={{ opacity: 0, x: 40 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 40 }}
-                  transition={{ duration: 0.5 }}
-                  className="p-4 rounded-5"
-                  style={{ backgroundColor: "rgba(0,0,0,0.4)", border: "1px solid rgba(255,255,255,0.2)", backdropFilter: "blur(18px)" }}
-                >
-                  <p className="text-uppercase mb-3" style={{ letterSpacing: "0.2em", fontSize: "0.75rem", color: "#FFA500" }}>
-                    Spotlight Pods
-                  </p>
-                  <div className="d-flex flex-column gap-3">
-                    {badgeSet.map((badge) => {
-                      const Icon = Icons[badge.icon];
-                      return (
-                        <div key={badge.title} className="d-flex align-items-center justify-content-between p-3 rounded-4" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
-                          <div className="d-flex align-items-center gap-3">
-                            <div className="rounded-circle d-flex align-items-center justify-content-center" style={{ width: 46, height: 46, backgroundColor: "rgba(255,255,255,0.15)" }}>
-                              {Icon && <Icon size={22} />}
-                            </div>
-                            <div>
-                              <p className="mb-0 fw-semibold text-uppercase" style={{ letterSpacing: "0.1em", fontSize: "0.75rem", color: "#FFA500" }}>
-                                {badge.title}
-                              </p>
-                              <p className="mb-0 text-white-50">{badge.detail}</p>
-                            </div>
-                          </div>
-                          <Icons.ChevronRight size={18} />
-                        </div>
-                      );
-                    })}
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -298,10 +281,10 @@ const Home = () => {
                     border: "1px solid #eef1f6"
                   }}
                 >
-                  <p className="text-uppercase mb-2" style={{ color: "#74839C", letterSpacing: "0.2em", fontSize: "0.75rem" }}>
+                  <p className="text-uppercase fw-bold" style={{ color: "#FFA500", letterSpacing: "0.2em", fontSize: "0.75rem", fontWeight: 600, marginBottom: "8px" }}>
                     {stat.label}
                   </p>
-                  <h2 className="fw-bold" style={{ color: "#003B6D", fontSize: "2.75rem" }}>
+                  <h2 className="fw-bold" style={{ color: "#003B6D", fontSize: "2.75rem", fontWeight: 700, lineHeight: 1.2 }}>
                     {stat.value}
                   </h2>
                 </div>
@@ -330,10 +313,10 @@ const Home = () => {
                           {Icon && <Icon size={24} />}
                         </div>
                         <div>
-                          <p className="fw-semibold mb-1" style={{ color: "#003B6D" }}>
+                          <p className="fw-bold mb-1" style={{ color: "#003B6D", fontSize: "0.95rem", fontWeight: 700 }}>
                             {item.title}
                           </p>
-                          <p className="text-muted mb-0 small">{item.description}</p>
+                          <p className="mb-0" style={{ color: "#4c627a", fontSize: "0.875rem", fontWeight: 400 }}>{item.description}</p>
                         </div>
                       </div>
                     </div>
@@ -343,7 +326,7 @@ const Home = () => {
             </div>
             <div className="col-lg-8">
               <div className="row g-4">
-                {services.map((service, index) => {
+                {services.slice(0, 4).map((service, index) => {
                   const Icon = Icons[service.icon];
                   return (
                     <motion.div
@@ -370,11 +353,11 @@ const Home = () => {
                             {service.segment || "Premium"}
                           </span>
                         </div>
-                        <h4 className="fw-bold mb-3" style={{ color: "#003B6D" }}>
+                        <h4 className="fw-bold mb-3" style={{ color: "#003B6D", fontSize: "1.1rem", fontWeight: 700 }}>
                           {service.name}
                         </h4>
-                        <p className="text-muted mb-4">{service.shortDesc}</p>
-                        <Link to={`/services/${service.id}`} className="fw-semibold" style={{ color: "#003B6D", textDecoration: "none" }}>
+                        <p className="mb-4" style={{ color: "#4c627a", fontSize: "0.95rem", fontWeight: 400 }}>{service.shortDesc}</p>
+                        <Link to={`/services/${service.id}`} className="fw-semibold" style={{ color: "#003B6D", textDecoration: "none", fontSize: "0.95rem", fontWeight: 600 }}>
                           Explore product →
                         </Link>
                       </div>
@@ -413,10 +396,10 @@ const Home = () => {
                     >
                       <div className="d-flex align-items-center justify-content-between">
                         <div>
-                          <p className="text-uppercase mb-1" style={{ letterSpacing: "0.2em", fontSize: "0.75rem" }}>
+                          <p className="text-uppercase fw-bold mb-1" style={{ letterSpacing: "0.2em", fontSize: "0.75rem", fontWeight: 600 }}>
                             {tab.metric}
                           </p>
-                          <h5 className="fw-bold mb-0">{tab.title}</h5>
+                          <h5 className="fw-bold mb-0" style={{ fontSize: "1rem", fontWeight: 700 }}>{tab.title}</h5>
                         </div>
                         <div className="rounded-circle d-flex align-items-center justify-content-center" style={{ width: 46, height: 46, backgroundColor: activeTab === index ? "rgba(255,255,255,0.2)" : "rgba(0,59,109,0.08)" }}>
                           {Icon && <Icon size={22} />}
@@ -439,10 +422,10 @@ const Home = () => {
                   boxShadow: "0 30px 60px rgba(0,59,109,0.15)"
                 }}
               >
-                <h3 className="fw-bold mb-3" style={{ color: "#00254B" }}>
+                <h3 className="fw-bold mb-3" style={{ color: "#003B6D", fontSize: "1.5rem", fontWeight: 700 }}>
                   {ActiveInsight.title}
                 </h3>
-                <p className="mb-4" style={{ color: "#243852", fontSize: "1.05rem" }}>
+                <p className="mb-4" style={{ color: "#4c627a", fontSize: "1rem", fontWeight: 400, lineHeight: 1.6 }}>
                   {ActiveInsight.description}
                 </p>
                 <div className="row g-3">
@@ -450,7 +433,7 @@ const Home = () => {
                     <div key={bullet} className="col-md-6">
                       <div className="d-flex align-items-center gap-2 p-3 rounded-4" style={{ backgroundColor: "rgba(255,255,255,0.65)" }}>
                         <Icons.CheckCircle size={20} style={{ color: "#0A6C3F" }} />
-                        <span className="fw-semibold" style={{ color: "#1c2f44" }}>
+                        <span className="fw-semibold" style={{ color: "#0f1a2c", fontSize: "0.95rem", fontWeight: 600 }}>
                           {bullet}
                         </span>
                       </div>
@@ -463,132 +446,106 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-5" style={{ background: "linear-gradient(180deg, #ffffff 0%, #f2f6fb 100%)" }}>
+      <section className="home-workflow-section py-5">
         <div className="container">
-          <SectionTitle
-            subtitle="Workflow"
-            title="A composable journey from hello to forever"
-            description="We synchronise every touchpoint with data trails and human guardians so that your loan lifecycle feels choreographed."
-          />
-          <div className="row g-4 mt-2">
-            <div className="col-lg-4">
-              <div className="h-100 p-4 rounded-4" style={{ backgroundColor: "#003B6D", color: "white", boxShadow: "0 30px 60px rgba(0,59,109,0.25)" }}>
-                <p className="text-uppercase mb-2" style={{ letterSpacing: "0.2em", fontSize: "0.75rem", color: "rgba(255,255,255,0.7)" }}>
-                  Guided workflow
-                </p>
-                <h3 className="fw-bold mb-3">{processSteps.length}-step concierge experience.</h3>
-                <p className="opacity-75 mb-4">
-                  Every application is choreographed by dedicated pods, predictive nudges, and secure audit trails so you always know what's next.
-                </p>
-                <ul className="list-unstyled d-flex flex-column gap-2 mb-4">
-                  {["Dedicated pod lead", "Real-time status tracking", "Secure document vault"].map((item) => (
-                    <li key={item} className="d-flex align-items-center gap-2">
-                      <Icons.CheckCircle size={18} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/contact"
-                  className="btn btn-light text-uppercase fw-semibold"
-                  style={{ letterSpacing: "0.1em", borderRadius: "50px", color: "#003B6D" }}
+          <div className="home-workflow-header">
+            {/* <button type="button" className="workflow-viewall-btn">
+              <Icons.ArrowLeft size={16} />
+              <span>View All</span>
+            </button> */}
+            <div className="workflow-heading text-center">
+              <span className="workflow-eyebrow">Work Process</span>
+              <h2>
+                Execution With Clear Steps
+              </h2>
+            </div>
+          </div>
+          <div className="home-workflow-track">
+            {processSteps.map((step, index) => {
+              const visual = workflowVisuals[index % workflowVisuals.length];
+              const Icon = Icons[visual.icon];
+
+              return (
+                <motion.div
+                  key={step.id}
+                  className="home-workflow-card"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, delay: index * 0.05 }}
+                  viewport={{ once: true }}
                 >
-                  Talk to a specialist
-                </Link>
-              </div>
-            </div>
-            <div className="col-lg-8">
-              <div className="position-relative ps-lg-4">
-                {processSteps.map((step, index) => (
-                  <motion.div
-                    key={step.id}
-                    className="position-relative ps-5 pb-4"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <span
-                      className="position-absolute top-0 start-0 translate-middle"
-                      style={{
-                        width: 36,
-                        height: 36,
-                        borderRadius: "50%",
-                        backgroundColor: "#FFA500",
-                        color: "#001935",
-                        fontWeight: 700,
-                        fontSize: "1rem",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center"
-                      }}
-                    >
-                      {index + 1}
-                    </span>
-                    {index !== processSteps.length - 1 && (
-                      <span
-                        className="position-absolute"
-                        style={{
-                          left: 15,
-                          top: 42,
-                          bottom: -10,
-                          width: 2,
-                          background: "rgba(0,59,109,0.25)"
-                        }}
-                      />
-                    )}
-                    <div className="p-4 rounded-4 bg-white shadow-sm" style={{ border: "1px solid #e4e8f1" }}>
-                      <div className="d-flex align-items-center justify-content-between mb-2">
-                        <small className="text-uppercase fw-semibold" style={{ letterSpacing: "0.15em", color: "#74839C" }}>
-                          {step.step}
-                        </small>
-                        <span className="badge" style={{ backgroundColor: "rgba(0,59,109,0.1)", color: "#003B6D" }}>
-                          {index + 1}/{processSteps.length}
-                        </span>
-                      </div>
-                      <h5 className="fw-bold mb-2" style={{ color: "#003B6D" }}>
-                        {step.title}
-                      </h5>
-                      <p className="mb-0 text-muted">{step.description}</p>
-                      <div className="mt-3 rounded-pill" style={{ height: 6, backgroundColor: "#edf1f7" }}>
-                        <div
-                          style={{
-                            width: `${((index + 1) / processSteps.length) * 100}%`,
-                            height: "100%",
-                            borderRadius: 999,
-                            background: "linear-gradient(90deg, #FFA500, #FFCE73)"
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+                  <div className="workflow-card-icon" style={{ background: visual.accent }}>
+                    <div className="workflow-card-icon-inner">{Icon && <Icon size={34} />}</div>
+                  </div>
+                  <span className="workflow-card-seq">0{index + 1}</span>
+                  <h5>{step.title}</h5>
+                  <p>{step.description}</p>
+                  {index !== processSteps.length - 1 && <span className="workflow-connector" />}
+                </motion.div>
+              );
+            })}
+          </div>
+          <div className="workflow-footnote">
+            <span>Get Free Quote</span>
+            <Link to="/contact">Let's talk! We'll reply within a day</Link>
           </div>
         </div>
       </section>
 
-      <section className="py-5" style={{ background: "#f7f9fc" }}>
+      <section className="testimonial-section py-5">
         <div className="container">
-          <SectionTitle
-            subtitle="Testimonials"
-            title="Proof in live portfolios"
-            description="CXOs, founders, and families trust us with capital moments because we stay present beyond disbursal."
-          />
-          <div className="row g-4">
-            {testimonials.slice(0, 3).map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                className="col-lg-4"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <TestimonialCard {...testimonial} />
-              </motion.div>
-            ))}
+          <div className="testimonial-wrapper">
+            <div className="testimonial-left">
+              <div className="testimonial-eyebrow">
+                <p className="text-uppercase fw-bold mb-0" style={{ color: "#FFA500", fontSize: "0.75rem", letterSpacing: "0.2em", fontWeight: 600 }}>
+                  Testimonials
+                </p>
+              </div>
+              <div className="testimonial-heading">
+                <div>
+                  <h2 style={{ color: "#003B6D", fontSize: "2.75rem", fontWeight: 700, marginBottom: "12px" }}>Genuine reviews from satisfied customers</h2>
+                  {/* <p style={{ color: "#4c627a", fontSize: "1rem", fontWeight: 400, lineHeight: 1.6 }}>CXOs, founders, and families trust us with capital moments because we stay present beyond disbursal.</p> */}
+                </div>
+              </div>
+              {currentTestimonial && (
+                <>
+                  <motion.blockquote
+                    key={currentTestimonial.id}
+                    className="testimonial-quote"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    viewport={{ once: true }}
+                  >
+                    “{currentTestimonial.content}”
+                  </motion.blockquote>
+                  <div className="testimonial-author">
+                    <div className="testimonial-avatar">{testimonialInitials}</div>
+                    <div>
+                      <p className="testimonial-author-name">{currentTestimonial.name}</p>
+                      <p className="testimonial-author-role">{currentTestimonial.role}</p>
+                    </div>
+                  </div>
+                </>
+              )}
+              <div className="testimonial-controls">
+                <button type="button" className="testimonial-control-btn" onClick={goToPrevTestimonial} aria-label="Previous testimonial">
+                  <Icons.ArrowLeft size={18} />
+                </button>
+                <button type="button" className="testimonial-control-btn" onClick={goToNextTestimonial} aria-label="Next testimonial">
+                  <Icons.ArrowRight size={18} />
+                </button>
+              </div>
+            </div>
+            {/* <div className="testimonial-metrics">
+              {testimonialStatsData.map((metric) => (
+                <div key={metric.id} className="testimonial-metric">
+                  <p className="testimonial-metric-value">{metric.value}</p>
+                  <p className="testimonial-metric-title">{metric.title}</p>
+                  <p className="testimonial-metric-desc">{metric.description}</p>
+                </div>
+              ))}
+            </div> */}
           </div>
         </div>
       </section>
@@ -597,8 +554,8 @@ const Home = () => {
         <div className="container">
           <div className="row g-4 align-items-center">
             <div className="col-lg-8">
-              <h2 className="display-5 fw-bold mb-3">Ready to choreograph your next financial move?</h2>
-              <p className="lead mb-0" style={{ maxWidth: "600px" }}>
+              <h2 className="display-5 fw-bold mb-3" style={{ fontSize: "2.5rem", fontWeight: 700, color: "white" }}>Ready to choreograph your next financial move?</h2>
+              <p className="mb-0" style={{ maxWidth: "600px", fontSize: "1rem", fontWeight: 400, lineHeight: 1.6, color: "white" }}>
                 Book a discovery workshop with our strategists and walk out with a custom credit plan, risk heat-map, and execution roadmap.
               </p>
             </div>

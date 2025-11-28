@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import * as Icons from "lucide-react";
 import { Link } from "react-router-dom";
@@ -8,6 +8,7 @@ import SectionTitle from "../Component/SectionTitle";
 
 const Services = () => {
   const [expandedService, setExpandedService] = useState(services[0]?.id ?? null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
 
   const serviceMetrics = [
     { label: "Avg Approval", value: "48 hrs" },
@@ -88,10 +89,41 @@ const Services = () => {
     }
   ];
 
+  const serviceVisuals = {
+    "business-loan": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&q=80",
+    "personal-loan": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
+    "gold-loan": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
+    "vehicle-loan": "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=800&q=80",
+    "mortgage-loan": "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c?w=800&q=80",
+    "home-loan": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80"
+  };
+
+  const heroServices = useMemo(() => services.slice(0, 3), []);
+
   const { scrollYProgress } = useScroll();
   const heroParallax = useTransform(scrollYProgress, [0, 1], [0, 180]);
   const accentParallax = useTransform(scrollYProgress, [0, 1], [0, -140]);
   const activeService = services.find((svc) => svc.id === expandedService) ?? services[0];
+
+  useEffect(() => {
+    const heroActive = heroServices[carouselIndex];
+    if (heroActive) {
+      setExpandedService(heroActive.id);
+    }
+  }, [carouselIndex, heroServices, setExpandedService]);
+
+  const goToSlide = (index) => {
+    if (!heroServices.length) return;
+    const normalized = (index + heroServices.length) % heroServices.length;
+    setCarouselIndex(normalized);
+  };
+
+  const handlePrev = () => goToSlide(carouselIndex - 1);
+  const handleNext = () => goToSlide(carouselIndex + 1);
+
+  const handleHighlight = (index) => {
+    goToSlide(index);
+  };
 
   return (
     <div className="services-page service-new-layout">
@@ -122,43 +154,55 @@ const Services = () => {
       {/* ===================== IMMERSIVE INTRO ===================== */}
       <section className="service-intro py-5">
         <div className="container">
-          <div className="row g-5 align-items-center">
-            <div className="col-lg-7">
-              <p className="section-tag">Why Lakshmithra</p>
-              <h2 className="fw-bold mb-3">Immersive service architecture for every ambition</h2>
-              <p className="text-muted mb-4">
-                We retained the bold hero you love and reimagined the body with layered storytelling, interactive focus panels, and parallax cues that guide customers from curiosity to conversion without losing momentum.
+          <div className="hero-promo-panel">
+            <div className="hero-promo-copy">
+              <div className="hero-eyebrow">Financial Success</div>
+              <h2>Achieve financial success through smart strategies and planning</h2>
+              <p>
+                Discover how strategic planning and smart financial decisions can help you achieve long-term financial success.
+                Learn key insights and tools to grow, manage, and protect your wealth effectively.
               </p>
-              <div className="row g-3">
-                {serviceMetrics.map((metric) => (
-                  <div key={metric.label} className="col-6">
-                    <div className="metric-pill">
-                      <span>{metric.value}</span>
-                      <p>{metric.label}</p>
-                    </div>
-                  </div>
-                ))}
+              <div className="hero-trust-row">
+                <div className="hero-avatars">
+                  {[1, 2, 3, 4].map((avatar) => (
+                    <span key={avatar} className={`avatar avatar-${avatar}`} />
+                  ))}
+                  <span className="avatar badge">+5k</span>
+                </div>
+                <div className="hero-trust-text">
+                  Trusted by 5,000+ worldwide brands
+                  <small>Elevating every borrowing journey</small>
+                </div>
+              </div>
+              <div className="hero-cta-row">
+                <Link to="/contact" className="hero-cta-primary">
+                  Contact Now
+                  <span>→</span>
+                </Link>
+                <Link to="/services" className="hero-cta-secondary">
+                  Explore Services
+                </Link>
               </div>
             </div>
-            <div className="col-lg-5">
-              <motion.div
-                className="service-intro-panel"
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div className="intro-badge">Human + Digital</div>
-                <h5 className="fw-bold mb-3">Guided journeys</h5>
-                <p className="text-muted mb-4">
-                  Dedicated specialists, smart nudges, and transparent milestones turn complex loan tasks into an elegant, confidence-building experience.
-                </p>
-                <div className="intro-links">
-                  <Link to="/contact">Talk to a specialist →</Link>
-                  <Link to="/services">View success stories →</Link>
+            <motion.div
+              className="hero-promo-visual"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="promo-photo" />
+              <div className="promo-card">
+                <p className="promo-title">Growth Snapshot</p>
+                <div className="promo-chart">
+                  {[40, 62, 80, 55].map((value, index) => (
+                    <div key={value} className="promo-bar" style={{ height: `${value}%` }}>
+                      <span>Mar 0{index + 1}</span>
+                    </div>
+                  ))}
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -168,35 +212,56 @@ const Services = () => {
         <div className="container">
           <div className="row g-5">
             <div className="col-lg-7">
-              <div className="service-card-grid">
-                {services.map((service, index) => {
-                  const IconComponent = Icons[service.icon];
-                  const isActive = activeService?.id === service.id;
-                  return (
-                    <motion.button
-                      key={service.id}
-                      type="button"
-                      className={`service-card-tile ${isActive ? "active" : ""}`}
-                      onMouseEnter={() => setExpandedService(service.id)}
-                      onFocus={() => setExpandedService(service.id)}
-                      onClick={() => setExpandedService(service.id)}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.05 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="service-card-head">
-                        <div className="service-card-icon">{IconComponent && <IconComponent size={26} />}</div>
-                        <h5 className="mb-1">{service.name}</h5>
-                        <p className="text-muted mb-0">{service.shortDesc}</p>
-                      </div>
-                      <div className="service-card-foot">
-                        <span>{service.interestRate}</span>
-                        <span>Explore →</span>
-                      </div>
-                    </motion.button>
-                  );
-                })}
+              <div className="service-visual-carousel">
+                <div
+                  className="visual-carousel-track"
+                  style={{ transform: `translateX(calc(-${carouselIndex} * (var(--service-card-width) + var(--service-card-gap))))` }}
+                >
+                  {heroServices.map((service, index) => {
+                    const backgroundImage = serviceVisuals[service.id] ?? "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&q=80";
+                    const isActive = carouselIndex === index;
+                    return (
+                      <motion.button
+                        key={service.id}
+                        type="button"
+                        className={`visual-carousel-card ${isActive ? "active" : ""}`}
+                        style={{ backgroundImage: `url(${backgroundImage})` }}
+                        onClick={() => handleHighlight(index)}
+                        onMouseEnter={() => handleHighlight(index)}
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.45, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <span className="visual-card-index">0{index + 1}</span>
+                        <div className="visual-card-overlay" />
+                        <div className="visual-card-label">
+                          <h5>{service.name}</h5>
+                          <p>{service.shortDesc}</p>
+                        </div>
+                      </motion.button>
+                    );
+                  })}
+                </div>
+                <div className="visual-carousel-controls">
+                  <button type="button" className="visual-nav" onClick={handlePrev}>
+                    ←
+                  </button>
+                  <div className="visual-dots">
+                    {heroServices.map((service, index) => (
+                      <button
+                        key={service.id}
+                        type="button"
+                        className={`visual-dot ${carouselIndex === index ? "active" : ""}`}
+                        onClick={() => handleHighlight(index)}
+                        aria-label={`Go to ${service.name}`}
+                      />
+                    ))}
+                  </div>
+                  <button type="button" className="visual-nav" onClick={handleNext}>
+                    →
+                  </button>
+                </div>
               </div>
             </div>
             <div className="col-lg-5">
